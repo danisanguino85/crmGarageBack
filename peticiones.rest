@@ -12,3 +12,27 @@ GET http://localhost:3000/api/vehiculos
 
 ###
 GET http://localhost:3000/api/clientes
+
+###
+GET http://localhost:3000/api/usuarios/id
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+###
+POST http://localhost:3000/api/usuarios/telefono
+Content-Type: application/json
+
+{
+    "telefono": 600567890
+}
+
+###
+POST http://localhost:3000/api/usuarios/email
+Content-Type: application/json
+
+{
+    "email": "pedro.hernandez@example.com"
+}
