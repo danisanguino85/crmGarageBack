@@ -1,20 +1,17 @@
 
 
 ###
-
 GET http://localhost:3000/api/reparaciones
+
+
+###
+GET http://localhost:3000/api/reparaciones/2
+
 
 
 ###
 GET http://localhost:3000/api/vehiculos
 
-###
-POST http://localhost:3000/api/clientes
-Content-Type: application/json
-
-{
-    "telefono":"611234567"
-}
 ###
 POST http://localhost:3000/api/clientes/tel
 Content-Type: application/json
@@ -35,10 +32,10 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/clientes/5
 
+###
 GET http://localhost:3000/api/clientes
 
 ###
-
 GET http://localhost:3000/api/usuarios
 
 ###
@@ -50,7 +47,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/usuarios/telefono
+POST http://localhost:3000/api/usuarios/tel
 Content-Type: application/json
 
 {
@@ -64,3 +61,15 @@ Content-Type: application/json
 {
     "email": "pedro.hernandez@example.com"
 }
+
+###
+POST http://localhost:3000/api/vehiculos
+Content-Type: application/json
+
+{
+    "matricula": "1234ABC"
+}
+
+
+
+

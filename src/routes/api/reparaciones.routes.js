@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const {
-    getAllReparaciones,
+    getAllReparaciones, getByIdReparaciones
 } = require("../../controllers/reparaciones.controllers");
 
 router.get("/", getAllReparaciones);
+router.get('/:idReparaciones', getByIdReparaciones)
 
 module.exports = router;

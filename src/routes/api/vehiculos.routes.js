@@ -1,6 +1,11 @@
 const router = require("express").Router();
-const { getAllVehiculos } = require("../../controllers/vehiculos.controllers");
+const {
+    getAllVehiculos,
+    getVehiculoByMatricula,
+} = require("../../controllers/vehiculos.controllers");
 
 router.get("/", getAllVehiculos);
+
+router.post("/", getVehiculoByMatricula);
 
 module.exports = router;
