@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { getAll } = require("../../controllers/vehiculos.controllers");
+const { getAllVehiculos } = require("../../controllers/vehiculos.controllers");
 
-router.get("/", getAll);
+router.get("/", getAllVehiculos);
 
 module.exports = router;

@@ -1,8 +1,8 @@
 const vehiculosModel = require("../models/vehiculos.models");
 
-const getAll = async (req, res, next) => {
+const getAllVehiculos = async (req, res, next) => {
 	try {
-		const vehiculo = await vehiculosModel.selectAll();
+		const vehiculo = await vehiculosModel.selectAllVehiculos();
 		res.json(vehiculo);
 	} catch (error) {
 		next(error);
@@ -10,5 +10,5 @@ const getAll = async (req, res, next) => {
 };
 
 module.exports = {
-	getAll,
+	getAllVehiculos,
 };
