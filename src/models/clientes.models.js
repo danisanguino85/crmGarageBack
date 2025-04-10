@@ -28,10 +28,37 @@ const selectClientesByEmail = async (email) => {
     if (result === 0) return null;
     return result[0];
 };
+const insertCliente = async ({
+    nombre,
+    apellidos,
+    dni,
+    telefono,
+    email,
+    direccion,
+}) => {
+    const [result] = await db.query(
+        "insert into clientes (nombre,apellidos,dni,telefono,email,direccion)values(?,?,?,?,?,?)",
+        [nombre, apellidos, dni, telefono, email, direccion],
+    );
+    return result;
+};
+
+const updateClienteById = async (
+    clienteId,
+    { nombre, apellidos, dni, telefono, email, direccion },
+) => {
+    const [result] = await db.query(
+        "update clientes set nombre=?,apellidos=?,dni=?,telefono=?,email=?,direccion=? where id=?",
+        [nombre, apellidos, dni, telefono, email, direccion, clienteId],
+    );
+    return result;
+};
 
 module.exports = {
     selectAllClientes,
     selectClientesByTelefono,
     selectClientesByEmail,
     selectClienteById,
+    insertCliente,
+    updateClienteById,
 };

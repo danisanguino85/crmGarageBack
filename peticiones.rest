@@ -30,10 +30,38 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3000/api/clientes/new
+Content-Type: application/json
+
+{
+    "nombre":"Rafael",
+    "apellidos":"Moreno Cortés",
+    "dni":"09998765e",
+    "telefono":"644567654",
+    "email":"rafi@gmail.com",
+    "direccion":"C/ Gran Vía 32, Madrid"
+}
+
+###
+PUT http://localhost:3000/api/clientes/3
+Content-Type: application/json
+
+{
+    "nombre":"Laura",
+    "apellidos":"Díaz Cortés",
+    "dni":"09978765e",
+    "telefono":"640567654",
+    "email":"raii@gmail.com",
+    "direccion":"C/ Gran Vía 32, Madrid"
+}
+
+###
 GET http://localhost:3000/api/clientes/5
 
 ###
 GET http://localhost:3000/api/clientes
+
+
 
 ###
 GET http://localhost:3000/api/usuarios

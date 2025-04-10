@@ -37,9 +37,37 @@ const getClientesByEmail = async (req, res, next) => {
     }
 };
 
+const createCliente = async (req, res, next) => {
+    try {
+        const result = await clientesModel.insertCliente(req.body);
+        const cliente = await clientesModel.selectClienteById(result.insertId);
+
+        res.json(cliente);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const updateCliente = async (req, res, next) => {
+    const { clienteId } = req.params;
+    try {
+        const result = await clientesModel.updateClienteById(
+            clienteId,
+            req.body,
+        );
+        const cliente = await clientesModel.selectClienteById(clienteId);
+
+        res.json(cliente);
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
     getAllClientes,
     getClientesByTelefono,
     getClientesByEmail,
     getClienteById,
+    createCliente,
+    updateCliente,
 };
