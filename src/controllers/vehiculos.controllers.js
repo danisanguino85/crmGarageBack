@@ -9,6 +9,21 @@ const getAllVehiculos = async (req, res, next) => {
 	}
 };
 
+const getVehiculoByMatricula = async (req, res, next)=>{
+     
+    const {matricula} = req.body;
+
+   try {
+     const vehiculo = await vehiculosModel.selectVehiculoByMatricula(matricula)
+ 
+     res.json(vehiculo)
+   } catch (error) {
+    console.log(error)
+   }
+}
+
+
 module.exports = {
 	getAllVehiculos,
+    getVehiculoByMatricula
 };

@@ -5,6 +5,15 @@ const selectAllVehiculos = async () => {
 	return result;
 };
 
+
+const selectVehiculoByMatricula =  async (matricula)=>{
+   const [result] = await db.query('select * from crm_garage.vehiculos where vehiculos.matricula=?', [matricula]);
+   
+   return result;
+}
+
+
 module.exports = {
 	selectAllVehiculos,
+    selectVehiculoByMatricula
 };

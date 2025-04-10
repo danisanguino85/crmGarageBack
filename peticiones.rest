@@ -1,14 +1,25 @@
 
 
 ###
-
 GET http://localhost:3000/api/reparaciones
 
 ###
+GET http://localhost:3000/api/reparaciones/2
 
+###
 GET http://localhost:3000/api/usuarios
 ###
 GET http://localhost:3000/api/vehiculos
 
 ###
+POST http://localhost:3000/api/vehiculos
+Content-Type: application/json
+
+{
+    "matricula": "1234ABC"
+}
+
+###
 GET http://localhost:3000/api/clientes
+
+
