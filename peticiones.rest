@@ -47,7 +47,7 @@ PUT http://localhost:3000/api/clientes/3
 Content-Type: application/json
 
 {
-    "nombre":"Laura",
+    "nombre":"Andrea",
     "apellidos":"Díaz Cortés",
     "dni":"09978765e",
     "telefono":"640567654",
