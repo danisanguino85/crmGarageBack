@@ -87,7 +87,7 @@ const selectAllCrearUsuario = async ({
     }
 };
 
-selectAllupdateById = async (
+updateUsuarioById = async (
     id,
     {
         nombre,
@@ -143,5 +143,5 @@ module.exports = {
     selectAllUsuariosByTelefono,
     selectAllUsuariosByEmail,
     selectAllCrearUsuario,
-    selectAllupdateById,
+    updateUsuarioById,
 };

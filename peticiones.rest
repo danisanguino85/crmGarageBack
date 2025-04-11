@@ -97,7 +97,7 @@ Content-Type: application/json
 {
   "nombre": "Luis Alberto",
   "apellidos": "Fernández Ruiz",
-  "dni": "45678901Z",
+  "dni": "45678901P",
   "telefono": "614223344",
   "email": "luisfernandez@example.com",
   "fecha_nacimiento": "1985-08-17",
@@ -139,6 +139,17 @@ Content-Type: application/json
   "especialidad": "híbridos_y_eléctricos",
   "notas": "Experto en reparación de vehículos híbridos y eléctricos."
 }
+
+###
+POST http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{ 
+    "email": "luisfernandez@example.com",
+    "contraseña": "LuisElec2025#"
+}
+
+###
 
 
 ###########

@@ -1,5 +1,6 @@
 const usuariosModel = require("../models/usuarios.models");
 const bcrypt = require("bcryptjs");
+const { createToken } = require("../helpers/utils");
 
 const getAllUsuarios = async (req, res, next) => {
     try {
@@ -65,10 +66,51 @@ const updateUsuario = async (req, res, next) => {
     req.body.contraseña = bcrypt.hashSync(contraseña, 10);
 
     try {
-        const result = await usuariosModel.selectAllupdateById(id, req.body);
+        const result = await usuariosModel.updateUsuarioById(id, req.body);
         const usuarios = await usuariosModel.selectAllUsuariosById(id);
 
         res.json(usuarios);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const loginUsuario = async (req, res, next) => {
+    const { email, contraseña } = req.body;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: "Invalid email format" });
+    }
+
+    const emailIsValid = await usuariosModel.selectAllUsuariosByEmail(email);
+
+    if (!emailIsValid) {
+        return res.status(404).json({
+            message: " 1 Usuario no encontrado, email o/y contraseña incorrecta",
+        });
+    }
+
+    const contraseñaIsValid = bcrypt.compareSync(
+        contraseña, emailIsValid.contraseña
+    );
+
+    console.log(emailIsValid.contraseña)
+
+   
+    if (!contraseñaIsValid) {
+        return res.status(401).json({
+            message: "Usuario no encontrado, email o/y contraseña incorrecta",
+        });
+    }
+
+    
+    try {
+        res.json({
+            message: "login correcto",
+            token: createToken(emailIsValid),
+        });
     } catch (error) {
         next(error);
     }
@@ -81,4 +123,5 @@ module.exports = {
     getUsuariosByEmail,
     createUsuario,
     updateUsuario,
+    loginUsuario,
 };
