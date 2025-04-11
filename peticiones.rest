@@ -4,10 +4,12 @@
 
 ###
 GET http://localhost:3000/api/reparaciones
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 
 ###
 GET http://localhost:3000/api/reparaciones/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 
 ###########
@@ -16,6 +18,7 @@ GET http://localhost:3000/api/reparaciones/2
 
 ###
 POST http://localhost:3000/api/clientes/tel
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
@@ -25,14 +28,16 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/clientes/mail
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
-    "email":"miguel.rd@example.com"
+    "email":"carlos.martinez@example.com"
 }
 
 ###
 POST http://localhost:3000/api/clientes/new
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
@@ -46,6 +51,7 @@ Content-Type: application/json
 
 ###
 PUT http://localhost:3000/api/clientes/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
@@ -59,9 +65,11 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/clientes/5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 ###
 GET http://localhost:3000/api/clientes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 
 ###########
@@ -70,12 +78,15 @@ GET http://localhost:3000/api/clientes
 
 ###
 GET http://localhost:3000/api/usuarios
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 ###
-GET http://localhost:3000/api/usuarios/5
+GET http://localhost:3000/api/usuarios/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 ###
 POST http://localhost:3000/api/usuarios/tel
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
@@ -84,6 +95,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/usuarios/email
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
@@ -92,6 +104,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/usuarios
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
@@ -117,6 +130,7 @@ Content-Type: application/json
 
 ###
 PUT http://localhost:3000/api/usuarios/6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
@@ -142,6 +156,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/usuarios/login
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 { 
@@ -159,6 +174,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/vehiculos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
@@ -167,6 +183,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/vehiculos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 
 

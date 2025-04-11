@@ -6,14 +6,14 @@ const selectAllUsuarios = async () => {
     return result;
 };
 
-const selectAllUsuariosById = async (id) => {
+const selectUsuarioById = async (id) => {
     const [result] = await db.query("select*from usuarios where id = ?", [id]);
 
     if (result.length === 0) return null;
     return result[0];
 };
 
-const selectAllUsuariosByTelefono = async (telefono) => {
+const selectUsuarioByTelefono = async (telefono) => {
     const [result] = await db.query("select*from usuarios where telefono = ?", [
         telefono,
     ]);
@@ -22,7 +22,7 @@ const selectAllUsuariosByTelefono = async (telefono) => {
     return result[0];
 };
 
-const selectAllUsuariosByEmail = async (email) => {
+const selectUsuarioByEmail = async (email) => {
     const [result] = await db.query("select*from usuarios where email = ?", [
         email,
     ]);
@@ -31,7 +31,7 @@ const selectAllUsuariosByEmail = async (email) => {
     return result[0];
 };
 
-const selectAllCrearUsuario = async ({
+const insertUsuario = async ({
     nombre,
     apellidos,
     dni,
@@ -139,9 +139,9 @@ updateUsuarioById = async (
 
 module.exports = {
     selectAllUsuarios,
-    selectAllUsuariosById,
-    selectAllUsuariosByTelefono,
-    selectAllUsuariosByEmail,
-    selectAllCrearUsuario,
+    selectUsuarioById,
+    selectUsuarioByTelefono,
+    selectUsuarioByEmail,
+    insertUsuario,
     updateUsuarioById,
 };
