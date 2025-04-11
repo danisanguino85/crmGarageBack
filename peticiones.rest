@@ -64,12 +64,9 @@ GET http://localhost:3000/api/clientes/5
 GET http://localhost:3000/api/clientes
 
 
-<<<<<<< HEAD
-=======
 ###########
 # usuarios #
 ###########
->>>>>>> feature3
 
 ###
 GET http://localhost:3000/api/usuarios
@@ -98,49 +95,49 @@ POST http://localhost:3000/api/usuarios
 Content-Type: application/json
 
 {
-    "nombre": "Carlos",
-    "apellidos": "Pérez García",
-    "dni": "34567890Y",
-    "telefono": "623456789",
-    "email": "carlos.perez@example.com",
-    "fecha_nacimiento": "1987-07-14",
-    "direccion": "Avenida de la Tecnología 56, Madrid",
-    "numero_ss": "334455667788",
-    "fecha_alta": "2023-09-01",
-    "fecha_baja": "2024-09-01",
-    "rol": "mecanico",
-    "activo": 1,
-    "contraseña": "carlosMec2024!",
-    "fecha_actualizacion": "2024-04-10",
-    "jornada": "completa",
-    "foto_perfil": "https://example.com/foto-carlos.jpg",
-    "especialidad": "híbridos_y_eléctricos",
-    "notas": "Especializado en reparación de sistemas electrónicos de vehículos."
+  "nombre": "Luis Alberto",
+  "apellidos": "Fernández Ruiz",
+  "dni": "45678901Z",
+  "telefono": "614223344",
+  "email": "luisfernandez@example.com",
+  "fecha_nacimiento": "1985-08-17",
+  "direccion": "Calle del Automóvil 89, Valencia",
+  "numero_ss": "778899001322",
+  "fecha_alta": "2024-03-10",
+  "fecha_baja": "2025-03-10",
+  "rol": "mecanico",
+  "activo": 1,
+  "contraseña": "LuisElec2025#",
+  "fecha_actualizacion": "2025-04-11",
+  "jornada": "completa",
+  "foto_perfil": "https://example.com/foto-luis.jpg",
+  "especialidad": "híbridos_y_eléctricos",
+  "notas": "Técnico senior con amplia experiencia en baterías de vehículos eléctricos."
 }
 
 ###
-PUT http://localhost:3000/api/usuarios/1
+PUT http://localhost:3000/api/usuarios/6
 Content-Type: application/json
 
 {
-    "nombre": "Johan",
-    "apellidos": "Hernández Pérez",
-    "dni": "98765432X",
-    "telefono": "634567897",
-    "email": "johan.hernandez@example.com",
-    "fecha_nacimiento": "1993-07-30",
-    "direccion": "Avenida de la Paz 8, Bilbao",
-    "numero_ss": "445566778899",
-    "fecha_alta": "2020-12-15",
-    "fecha_baja": "2023-12-15",
-    "rol": "mecanico",
-    "activo": 1,
-    "contraseña": "JohanMecSecure2023!",
-    "fecha_actualizacion": "2025-04-10",
-    "jornada": "completa",
-    "foto_perfil": "https://example.com/foto-johan.jpg",
-    "especialidad": "híbridos_y_eléctricos",
-    "notas": "Experto en transmisiones automáticas y reparación de motores."
+  "nombre": "José",
+  "apellidos": "González Pérez",
+  "dni": "87654321Y",
+  "telefono": "623456789",
+  "email": "jose.gonzalez@example.com",
+  "fecha_nacimiento": "1990-05-20",
+  "direccion": "Avenida de la Libertad 15, Madrid",
+  "numero_ss": "998877665544",
+  "fecha_alta": "2022-02-10",
+  "fecha_baja": "2025-02-10",
+  "rol": "mecanico",
+  "activo": 1,
+  "contraseña": "JoseMecSecure2025!",
+  "fecha_actualizacion": "2025-04-11",
+  "jornada": "completa",
+  "foto_perfil": "https://example.com/foto-jose.jpg",
+  "especialidad": "híbridos_y_eléctricos",
+  "notas": "Experto en reparación de vehículos híbridos y eléctricos."
 }
 
 

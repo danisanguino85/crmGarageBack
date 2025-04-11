@@ -1,4 +1,5 @@
 const usuariosModel = require("../models/usuarios.models");
+const bcrypt = require("bcryptjs");
 
 const getAllUsuarios = async (req, res, next) => {
     try {
@@ -44,6 +45,9 @@ const getUsuariosByEmail = async (req, res, next) => {
 };
 
 const createUsuario = async (req, res, next) => {
+    const { contraseña } = req.body;
+    req.body.contraseña = bcrypt.hashSync(contraseña, 10);
+
     try {
         const result = await usuariosModel.selectAllCrearUsuario(req.body);
         const usuarios = await usuariosModel.selectAllUsuariosById(
@@ -57,10 +61,13 @@ const createUsuario = async (req, res, next) => {
 
 const updateUsuario = async (req, res, next) => {
     const { id } = req.params;
+    const { contraseña } = req.body;
+    req.body.contraseña = bcrypt.hashSync(contraseña, 10);
 
     try {
         const result = await usuariosModel.selectAllupdateById(id, req.body);
         const usuarios = await usuariosModel.selectAllUsuariosById(id);
+
         res.json(usuarios);
     } catch (error) {
         next(error);
