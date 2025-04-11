@@ -1,4 +1,6 @@
-
+##############
+# reparaciones #
+##############
 
 ###
 GET http://localhost:3000/api/reparaciones
@@ -8,9 +10,9 @@ GET http://localhost:3000/api/reparaciones
 GET http://localhost:3000/api/reparaciones/2
 
 
-
-###
-GET http://localhost:3000/api/vehiculos
+###########
+# clientes #
+###########
 
 ###
 POST http://localhost:3000/api/clientes/tel
@@ -62,17 +64,18 @@ GET http://localhost:3000/api/clientes/5
 GET http://localhost:3000/api/clientes
 
 
+<<<<<<< HEAD
+=======
+###########
+# usuarios #
+###########
+>>>>>>> feature3
 
 ###
 GET http://localhost:3000/api/usuarios
 
 ###
-GET http://localhost:3000/api/usuarios/id
-Content-Type: application/json
-
-{
-    "id": 1
-}
+GET http://localhost:3000/api/usuarios/5
 
 ###
 POST http://localhost:3000/api/usuarios/tel
@@ -91,12 +94,71 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "nombre": "Carlos",
+    "apellidos": "Pérez García",
+    "dni": "34567890Y",
+    "telefono": "623456789",
+    "email": "carlos.perez@example.com",
+    "fecha_nacimiento": "1987-07-14",
+    "direccion": "Avenida de la Tecnología 56, Madrid",
+    "numero_ss": "334455667788",
+    "fecha_alta": "2023-09-01",
+    "fecha_baja": "2024-09-01",
+    "rol": "mecanico",
+    "activo": 1,
+    "contraseña": "carlosMec2024!",
+    "fecha_actualizacion": "2024-04-10",
+    "jornada": "completa",
+    "foto_perfil": "https://example.com/foto-carlos.jpg",
+    "especialidad": "híbridos_y_eléctricos",
+    "notas": "Especializado en reparación de sistemas electrónicos de vehículos."
+}
+
+###
+PUT http://localhost:3000/api/usuarios/1
+Content-Type: application/json
+
+{
+    "nombre": "Johan",
+    "apellidos": "Hernández Pérez",
+    "dni": "98765432X",
+    "telefono": "634567897",
+    "email": "johan.hernandez@example.com",
+    "fecha_nacimiento": "1993-07-30",
+    "direccion": "Avenida de la Paz 8, Bilbao",
+    "numero_ss": "445566778899",
+    "fecha_alta": "2020-12-15",
+    "fecha_baja": "2023-12-15",
+    "rol": "mecanico",
+    "activo": 1,
+    "contraseña": "JohanMecSecure2023!",
+    "fecha_actualizacion": "2025-04-10",
+    "jornada": "completa",
+    "foto_perfil": "https://example.com/foto-johan.jpg",
+    "especialidad": "híbridos_y_eléctricos",
+    "notas": "Experto en transmisiones automáticas y reparación de motores."
+}
+
+
+###########
+# vehiculos #
+###########
+
+
+###
 POST http://localhost:3000/api/vehiculos
 Content-Type: application/json
 
 {
     "matricula": "1234ABC"
 }
+
+###
+GET http://localhost:3000/api/vehiculos
 
 
 
