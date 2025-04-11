@@ -87,7 +87,7 @@ const selectAllCrearUsuario = async ({
     }
 };
 
-selectAllupdateById = async (
+updateUsuarioById = async (
     id,
     {
         nombre,
@@ -137,11 +137,13 @@ selectAllupdateById = async (
     return result;
 };
 
+
 module.exports = {
     selectAllUsuarios,
     selectAllUsuariosById,
     selectAllUsuariosByTelefono,
     selectAllUsuariosByEmail,
     selectAllCrearUsuario,
-    selectAllupdateById,
+    selectLoginUsuario,
+    updateUsuarioById,
 };

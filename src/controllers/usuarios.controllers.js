@@ -1,4 +1,5 @@
 const usuariosModel = require("../models/usuarios.models");
+const { createToken } = require("../helpers/utils");
 
 const getAllUsuarios = async (req, res, next) => {
     try {
@@ -59,9 +60,20 @@ const updateUsuario = async (req, res, next) => {
     const { id } = req.params;
 
     try {
-        const result = await usuariosModel.selectAllupdateById(id, req.body);
+        const result = await usuariosModel.updateUsuarioById(id, req.body);
         const usuarios = await usuariosModel.selectAllUsuariosById(id);
         res.json(usuarios);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const loginUsuario = async (req, res, next) => {
+    try {
+        res.json({
+            message: "login correcto",
+            token: await createToken(req.usuario),
+        });
     } catch (error) {
         next(error);
     }
@@ -74,4 +86,5 @@ module.exports = {
     getUsuariosByEmail,
     createUsuario,
     updateUsuario,
+    loginUsuario,
 };

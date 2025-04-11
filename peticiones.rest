@@ -143,6 +143,18 @@ Content-Type: application/json
     "notas": "Experto en transmisiones automáticas y reparación de motores."
 }
 
+###
+POST http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{
+    
+    "email": "carlos.perez@example.com",
+    "contraseña": "carlosMec2024!",
+}
+
+###
+
 
 ###########
 # vehiculos #
