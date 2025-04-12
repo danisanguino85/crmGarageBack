@@ -8,9 +8,7 @@ const {
     updateUsuario,
     loginUsuario,
 } = require("../../controllers/usuarios.controllers");
-const {
-    checkToken,
-} = require("../../middlewares/auth.middlewares");
+const { checkToken } = require("../../middlewares/auth.middlewares");
 
 router.post("/login", loginUsuario);
 router.get("/", checkToken, getAllUsuarios);

@@ -45,8 +45,8 @@ const getUsuariosByEmail = async (req, res, next) => {
 };
 
 const createUsuario = async (req, res, next) => {
-    const { contraseña } = req.body;
-    req.body.contraseña = bcrypt.hashSync(contraseña, 10);
+    const { password } = req.body;
+    req.body.password = bcrypt.hashSync(password, 10);
 
     try {
         const result = await usuariosModel.insertUsuario(req.body);
@@ -59,8 +59,8 @@ const createUsuario = async (req, res, next) => {
 
 const updateUsuario = async (req, res, next) => {
     const { id } = req.params;
-    const { contraseña } = req.body;
-    req.body.contraseña = bcrypt.hashSync(contraseña, 10);
+    const { password } = req.body;
+    req.body.password = bcrypt.hashSync(password, 10);
 
     try {
         const result = await usuariosModel.updateUsuarioById(id, req.body);
@@ -73,7 +73,7 @@ const updateUsuario = async (req, res, next) => {
 };
 
 const loginUsuario = async (req, res, next) => {
-    const { email, contraseña } = req.body;
+    const { email, password } = req.body;
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -85,21 +85,17 @@ const loginUsuario = async (req, res, next) => {
 
     if (!emailIsValid) {
         return res.status(404).json({
-            message:
-                " 1 Usuario no encontrado, email o/y contraseña incorrecta",
+            message: " 1 Usuario no encontrado, email o/y password incorrecta",
         });
     }
 
-    const contraseñaIsValid = bcrypt.compareSync(
-        contraseña,
-        emailIsValid.contraseña,
-    );
+    const passwordIsValid = bcrypt.compareSync(password, emailIsValid.password);
 
-    console.log(emailIsValid.contraseña);
+    console.log(emailIsValid.password);
 
-    if (!contraseñaIsValid) {
+    if (!passwordIsValid) {
         return res.status(401).json({
-            message: "Usuario no encontrado, email o/y contraseña incorrecta",
+            message: "Usuario no encontrado, email o/y password incorrecta",
         });
     }
 

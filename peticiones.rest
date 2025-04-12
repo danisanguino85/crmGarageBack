@@ -72,16 +72,16 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/clientes/3
+PUT http://localhost:3000/api/clientes/5
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
-    "nombre":"Andrea",
+    "nombre":"Víctor",
     "apellidos":"Díaz Cortés",
-    "dni":"09978765e",
-    "telefono":"640567654",
-    "email":"raii@gmail.com",
+    "dni":"09976765e",
+    "telefono":"649567654",
+    "email":"raiui@gmail.com",
     "direccion":"C/ Gran Vía 32, Madrid"
 }
 
@@ -142,7 +142,7 @@ Content-Type: application/json
   "fecha_baja": "2025-03-10",
   "rol": "mecanico",
   "activo": 1,
-  "contraseña": "LuisElec2025#",
+  "password": "LuisElec2025#",
   "fecha_actualizacion": "2025-04-11",
   "jornada": "completa",
   "foto_perfil": "https://example.com/foto-luis.jpg",
@@ -168,7 +168,7 @@ Content-Type: application/json
   "fecha_baja": "2025-02-10",
   "rol": "mecanico",
   "activo": 1,
-  "contraseña": "JoseMecSecure2025!",
+  "password": "JoseMecSecure2025!",
   "fecha_actualizacion": "2025-04-11",
   "jornada": "completa",
   "foto_perfil": "https://example.com/foto-jose.jpg",
@@ -183,7 +183,7 @@ Content-Type: application/json
 
 { 
     "email": "luisfernandez@example.com",
-    "contraseña": "LuisElec2025#"
+    "password": "LuisElec2025#"
 }
 
 ###
@@ -195,7 +195,7 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:3000/api/vehiculos
+POST http://localhost:3000/api/vehiculos/vehiculo
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
@@ -205,6 +205,10 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/vehiculos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+
+###
+GET http://localhost:3000/api/vehiculos/1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 
