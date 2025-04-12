@@ -14,7 +14,7 @@ const {
 } = require("../../middlewares/auth.middlewares");
 
 router.post("/login", loginUsuario);
-router.get("/", checkToken, getAllUsuarios);
+router.get("/", getAllUsuarios);
 router.get("/:id", getUsuariosById);
 router.post("/tel", checkToken, getUsuariosTelefono);
 router.post("/email", getUsuariosByEmail);
