@@ -13,7 +13,7 @@ router.get("/", getAllClientes);
 router.get("/:clienteId", getClienteById);
 router.post("/tel", getClientesByTelefono);
 router.post("/mail", getClientesByEmail);
-router.post("/new", createCliente);
+router.post("/registro", createCliente);
 router.put("/:clienteId", updateCliente);
 
 module.exports = router;
