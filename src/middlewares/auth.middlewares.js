@@ -2,9 +2,7 @@ const usuariosModel = require("../models/usuarios.models");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const checkUserloginEmailAndcontraseña = async (req, res, next) => {
-   
-
+const checkUserloginEmailAndPassword = async (req, res, next) => {
     next();
 };
 
@@ -30,6 +28,6 @@ const checkToken = async (req, res, next) => {
 };
 
 module.exports = {
-    checkUserloginEmailAndcontraseña,
+    checkUserloginEmailAndPassword,
     checkToken,
 };

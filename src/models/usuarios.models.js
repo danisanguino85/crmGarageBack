@@ -44,7 +44,7 @@ const insertUsuario = async ({
     fecha_baja,
     rol,
     activo,
-    contraseña,
+    password,
     fecha_actualizacion,
     jornada,
     foto_perfil,
@@ -56,7 +56,7 @@ const insertUsuario = async ({
             `INSERT INTO usuarios (
                 nombre, apellidos, dni, telefono, email, fecha_nacimiento, 
                 direccion, numero_ss, fecha_alta, fecha_baja, rol, activo, 
-                contraseña, fecha_actualizacion, jornada, foto_perfil, 
+                password, fecha_actualizacion, jornada, foto_perfil, 
                 especialidad, notas
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [
@@ -72,7 +72,7 @@ const insertUsuario = async ({
                 fecha_baja,
                 rol,
                 activo,
-                contraseña,
+                password,
                 fecha_actualizacion,
                 jornada,
                 foto_perfil,
@@ -102,7 +102,7 @@ updateUsuarioById = async (
         fecha_baja,
         rol,
         activo,
-        contraseña,
+        password,
         fecha_actualizacion,
         jornada,
         foto_perfil,
@@ -111,7 +111,7 @@ updateUsuarioById = async (
     },
 ) => {
     const [result] = await db.query(
-        "UPDATE usuarios SET nombre = ?, apellidos = ?, dni = ?, telefono = ?, email = ?, fecha_nacimiento = ?, direccion = ?, numero_ss = ?, fecha_alta = ?, fecha_baja = ?, rol = ?, activo = ?, contraseña = ?, fecha_actualizacion = ?, jornada = ?, foto_perfil = ?, especialidad = ?, notas = ? WHERE id = ?",
+        "UPDATE usuarios SET nombre = ?, apellidos = ?, dni = ?, telefono = ?, email = ?, fecha_nacimiento = ?, direccion = ?, numero_ss = ?, fecha_alta = ?, fecha_baja = ?, rol = ?, activo = ?, password = ?, fecha_actualizacion = ?, jornada = ?, foto_perfil = ?, especialidad = ?, notas = ? WHERE id = ?",
         [
             nombre,
             apellidos,
@@ -125,7 +125,7 @@ updateUsuarioById = async (
             fecha_baja,
             rol,
             activo,
-            contraseña,
+            password,
             fecha_actualizacion,
             jornada,
             foto_perfil,
