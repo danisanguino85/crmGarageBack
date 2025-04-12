@@ -56,8 +56,8 @@ const insertUsuario = async ({
                 nombre, apellidos, dni, telefono, email, fecha_nacimiento, 
                 direccion, numero_ss, fecha_alta, fecha_baja, rol, activo, 
                 password, fecha_actualizacion, jornada, foto_perfil, 
-                especialidad, notas
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                especialidad
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [
                 nombre,
                 apellidos,

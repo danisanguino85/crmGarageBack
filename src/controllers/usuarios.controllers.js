@@ -51,6 +51,7 @@ const createUsuario = async (req, res, next) => {
     try {
         const result = await usuariosModel.insertUsuario(req.body);
         const usuarios = await usuariosModel.selectUsuarioById(result.insertId);
+
         res.json(usuarios);
     } catch (error) {
         next(error);

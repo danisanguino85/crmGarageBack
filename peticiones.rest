@@ -24,8 +24,9 @@ Content-Type: application/json
 
 
 ###actualizar una reparacion
-PUT http://localhost:3000/api/reparaciones/41
+PUT http://localhost:3000/api/reparaciones/30
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Content-Type: application/json
 
 {
    "estado": "pendiente", 
@@ -63,11 +64,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 {
-    "nombre":"Rafael",
+    "nombre":"Belinda",
     "apellidos":"Moreno Cortés",
-    "dni":"09998765e",
-    "telefono":"644567654",
-    "email":"rafi@gmail.com",
+    "dni":"09398765e",
+    "telefono":"634567654",
+    "email":"beli@gmail.com",
     "direccion":"C/ Gran Vía 32, Madrid"
 }
 
@@ -121,7 +122,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 {
-    "email": "pedro.hernandez@example.com"
+    "email": "pedo.hernandez@example.com"
 }
 
 ###
@@ -132,21 +133,21 @@ Content-Type: application/json
 {
   "nombre": "Luis Alberto",
   "apellidos": "Fernández Ruiz",
-  "dni": "45678901P",
-  "telefono": "614223344",
-  "email": "luisfernandez@example.com",
+  "dni": "45730901P",
+  "telefono": "619023344",
+  "email": "luienandez@example.com",
   "fecha_nacimiento": "1985-08-17",
   "direccion": "Calle del Automóvil 89, Valencia",
-  "numero_ss": "778899001322",
+  "numero_ss": "778039001322",
   "fecha_alta": "2024-03-10",
   "fecha_baja": "2025-03-10",
   "rol": "mecanico",
   "activo": 1,
-  "password": "LuisElec2025#",
+  "password": "LisElec2025#",
   "fecha_actualizacion": "2025-04-11",
   "jornada": "completa",
   "foto_perfil": "https://example.com/foto-luis.jpg",
-  "especialidad": "híbridos_y_eléctricos",
+  "especialidad": "híbridos_y_eléctricos"
 }
 
 ###
@@ -171,7 +172,7 @@ Content-Type: application/json
   "fecha_actualizacion": "2025-04-11",
   "jornada": "completa",
   "foto_perfil": "https://example.com/foto-jose.jpg",
-  "especialidad": "híbridos_y_eléctricos",
+  "especialidad": "híbridos_y_eléctricos"
 }
 
 ###
@@ -211,7 +212,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 
 
 ###########
-# usuarios #
+# notas #
 ###########
 
 
