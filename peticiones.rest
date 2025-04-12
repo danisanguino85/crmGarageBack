@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/clientes/new
+POST http://localhost:3000/api/clientes/registro
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
@@ -184,6 +184,38 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/vehiculos
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+
+
+###########
+# usuarios #
+###########
+
+
+###
+GET http://localhost:3000/api/notas
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+
+###
+GET http://localhost:3000/api/notas/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Content-Type: application/json
+
+{
+    "notas":"eyyyyyyyy"
+}
+
+###
+POST http://localhost:3000/api/notas
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Content-Type: application/json
+
+{
+    "notas":"funsiona"
+}
+
+
+
+
 
 
 
