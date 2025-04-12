@@ -21,7 +21,47 @@ const getByIdReparaciones = async (req, res, next) => {
     }
 };
 
+const createReparacion = async (req, res, next) => {
+    const { estado, presupuesto, precio_total } = req.body;
+
+    try {
+        const result = await reparacionesModel.insertRepacion(
+            estado,
+            presupuesto,
+            precio_total,
+        );
+
+        const reparacion = await reparacionesModel.selectByIdReparaciones(
+            result.insertId,
+        );
+
+        res.json(reparacion);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const updateReparacion = async (req, res, next) => {
+    const { idReparaciones } = req.params;
+
+    try {
+        const result = await reparacionesModel.updateReparacionById(
+            idReparaciones,
+            req.body,
+        );
+
+        const reparacion =
+            await reparacionesModel.selectByIdReparaciones(idReparaciones);
+
+        res.json(reparacion);
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
     getAllReparaciones,
     getByIdReparaciones,
+    createReparacion,
+    updateReparacion,
 };
