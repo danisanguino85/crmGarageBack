@@ -10,7 +10,6 @@ const {
 } = require("../../controllers/usuarios.controllers");
 const {
     checkToken,
-    checkUserloginEmailAndcontraseña,
 } = require("../../middlewares/auth.middlewares");
 
 router.post("/login", loginUsuario);
