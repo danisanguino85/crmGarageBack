@@ -103,7 +103,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/usuarios
+POST http://localhost:3000/api/usuarios/register
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
@@ -129,7 +129,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/usuarios/6
+PUT http://localhost:3000/api/usuarios/update/6
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
