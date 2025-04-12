@@ -49,7 +49,6 @@ const insertUsuario = async ({
     jornada,
     foto_perfil,
     especialidad,
-    notas,
 }) => {
     try {
         const [result] = await db.query(
@@ -77,13 +76,11 @@ const insertUsuario = async ({
                 jornada,
                 foto_perfil,
                 especialidad,
-                notas,
             ],
         );
         return result;
     } catch (error) {
         console.error("Error al crear el usuario:", error);
-        throw error;
     }
 };
 
@@ -107,11 +104,10 @@ updateUsuarioById = async (
         jornada,
         foto_perfil,
         especialidad,
-        notas,
     },
 ) => {
     const [result] = await db.query(
-        "UPDATE usuarios SET nombre = ?, apellidos = ?, dni = ?, telefono = ?, email = ?, fecha_nacimiento = ?, direccion = ?, numero_ss = ?, fecha_alta = ?, fecha_baja = ?, rol = ?, activo = ?, password = ?, fecha_actualizacion = ?, jornada = ?, foto_perfil = ?, especialidad = ?, notas = ? WHERE id = ?",
+        "UPDATE usuarios SET nombre = ?, apellidos = ?, dni = ?, telefono = ?, email = ?, fecha_nacimiento = ?, direccion = ?, numero_ss = ?, fecha_alta = ?, fecha_baja = ?, rol = ?, activo = ?, password = ?, fecha_actualizacion = ?, jornada = ?, foto_perfil = ?, especialidad = ? WHERE id = ?",
         [
             nombre,
             apellidos,
@@ -130,7 +126,6 @@ updateUsuarioById = async (
             jornada,
             foto_perfil,
             especialidad,
-            notas,
             id,
         ],
     );

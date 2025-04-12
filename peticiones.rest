@@ -147,7 +147,6 @@ Content-Type: application/json
   "jornada": "completa",
   "foto_perfil": "https://example.com/foto-luis.jpg",
   "especialidad": "híbridos_y_eléctricos",
-  "notas": "Técnico senior con amplia experiencia en baterías de vehículos eléctricos."
 }
 
 ###
@@ -168,12 +167,11 @@ Content-Type: application/json
   "fecha_baja": "2025-02-10",
   "rol": "mecanico",
   "activo": 1,
-  "password": "JoseMecSecure2025!",
+  "passwword": "JoseMecSecure2025!",
   "fecha_actualizacion": "2025-04-11",
   "jornada": "completa",
   "foto_perfil": "https://example.com/foto-jose.jpg",
   "especialidad": "híbridos_y_eléctricos",
-  "notas": "Experto en reparación de vehículos híbridos y eléctricos."
 }
 
 ###
