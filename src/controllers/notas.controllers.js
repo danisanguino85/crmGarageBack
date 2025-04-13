@@ -17,6 +17,15 @@ const getNotaById = async (req, res, next) => {
         next(error);
     }
 };
+const getNotaByReparacion = async (req, res, next) => {
+    try {
+        const notas = await notasModel.selectNotaByReparacion(req.body);
+        res.json(notas);
+    } catch (error) {
+        next(error);
+    }
+};
+
 const createNota = async (req, res, next) => {
     try {
         const result = await notasModel.insertNota(req.body);
@@ -32,4 +41,5 @@ module.exports = {
     getAllNotas,
     getNotaById,
     createNota,
+    getNotaByReparacion,
 };

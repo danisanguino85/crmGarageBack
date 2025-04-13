@@ -238,6 +238,15 @@ Content-Type: application/json
     "notas":"funsiona"
 }
 
+###
+POST http://localhost:3000/api/notas/rep
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Content-Type: application/json
+
+{
+    "id":"1"
+}
+
 
 
 
