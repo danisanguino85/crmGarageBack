@@ -22,7 +22,7 @@ const checkToken = async (req, res, next) => {
         return res.status(403).json({ message: "el token es incorrecto" });
     }
 
-    req.usuario = tokenDecodify;
+    req.usuario = await usuariosModel.selectUsuarioById(tokenDecodify.id);
 
     next();
 };

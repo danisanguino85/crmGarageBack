@@ -20,11 +20,11 @@ const insertNota = async ({ notas }) => {
 
 const selectNotaByReparacion = async (reparacionId) => {
     const [result] = await db.query(
-        "select notas.notas,notas.id from notas join reparaciones on notas.reparaciones_id = reparaciones.id where notas.reparaciones_id=?",
+        "select notas.notas,notas.id from notas join reparaciones on notas.reparaciones_id = reparaciones.id where reparaciones.id=?",
         [reparacionId],
     );
-    if (result === 0) return null;
-    return result[0];
+
+    return result;
 };
 
 module.exports = {

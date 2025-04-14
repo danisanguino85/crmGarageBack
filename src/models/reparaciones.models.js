@@ -14,6 +14,20 @@ const selectByIdReparaciones = async (idReparaciones) => {
 
     return result[0];
 };
+const selectReparacionesByMecanico = async (usuarioId) => {
+    const [result] = await db.query(
+        "select estado, fecha_ingreso, fecha_finalizacion,estado,presupuesto,precio_total, usuarios.nombre, usuarios.apellidos,usuarios.telefono from reparaciones join usuarios on usuarios_id = usuarios.id where usuarios.id =?",
+        [usuarioId],
+    );
+    return result;
+};
+const selectVehiculoByReparacion = async (reparacionId) => {
+    const [result] = await db.query(
+        "select vehiculos.matricula, vehiculos.marca,vehiculos.modelo,vehiculos.fecha_matriculacion,vehiculos.km, vehiculos.fecha_entrada, vehiculos.fecha_salida from vehiculos join reparaciones on vehiculos_id = vehiculos.id where reparaciones.id= ?",
+        [reparacionId],
+    );
+    return result;
+};
 
 const insertRepacion = async ({ estado, presupuesto, precio_total }) => {
     const [result] = await db.query(
@@ -41,4 +55,6 @@ module.exports = {
     selectByIdReparaciones,
     insertRepacion,
     updateReparacionById,
+    selectReparacionesByMecanico,
+    selectVehiculoByReparacion,
 };

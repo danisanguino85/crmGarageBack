@@ -20,6 +20,27 @@ const getByIdReparaciones = async (req, res, next) => {
         next(error);
     }
 };
+const getReparacionesByMecanico = async (req, res, next) => {
+    try {
+        const reparaciones =
+            await reparacionesModel.selectReparacionesByMecanico(
+                req.usuario.id,
+            );
+        res.json(reparaciones);
+    } catch (error) {
+        next(error);
+    }
+};
+const getVehiculoByReparacion = async (req, res, next) => {
+    try {
+        const vehiculos = await reparacionesModel.selectVehiculoByReparacion(
+            req.body.id,
+        );
+        res.json(vehiculos);
+    } catch (error) {
+        next(error);
+    }
+};
 
 const createReparacion = async (req, res, next) => {
     const { estado, presupuesto, precio_total } = req.body;
@@ -64,4 +85,6 @@ module.exports = {
     getByIdReparaciones,
     createReparacion,
     updateReparacion,
+    getReparacionesByMecanico,
+    getVehiculoByReparacion,
 };

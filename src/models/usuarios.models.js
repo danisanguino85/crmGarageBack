@@ -1,29 +1,32 @@
 const db = require("../config/db.config");
 
 const selectAllUsuarios = async () => {
-    const [result] = await db.query("select*from usuarios");
+    const [result] = await db.query("select * from usuarios");
 
     return result;
 };
 
 const selectUsuarioById = async (id) => {
-    const [result] = await db.query("select*from usuarios where id = ?", [id]);
-
-    if (result.length === 0) return null;
-    return result[0];
-};
-
-const selectUsuarioByTelefono = async (telefono) => {
-    const [result] = await db.query("select*from usuarios where telefono = ?", [
-        telefono,
+    const [result] = await db.query("select * from usuarios where id = ?", [
+        id,
     ]);
 
     if (result.length === 0) return null;
     return result[0];
 };
 
+const selectUsuarioByTelefono = async (telefono) => {
+    const [result] = await db.query(
+        "select * from usuarios where telefono = ?",
+        [telefono],
+    );
+
+    if (result.length === 0) return null;
+    return result[0];
+};
+
 const selectUsuarioByEmail = async (email) => {
-    const [result] = await db.query("select*from usuarios where email = ?", [
+    const [result] = await db.query("select * from usuarios where email = ?", [
         email,
     ]);
 

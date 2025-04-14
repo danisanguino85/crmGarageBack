@@ -4,12 +4,21 @@
 
 ###
 GET http://localhost:3000/api/reparaciones
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ0NjIwMDQ1fQ.jtW5jgiD2fUJFy8wEWOI3Okih10fS_rJ93LKQOnNcMk
+
+
+###
 
 
 ###
 GET http://localhost:3000/api/reparaciones/2
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+
+###
+GET http://localhost:3000/api/reparaciones/usuario
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ0NjIwMDQ1fQ.jtW5jgiD2fUJFy8wEWOI3Okih10fS_rJ93LKQOnNcMk
+
+
 
 ###crear reparacion
 POST http://localhost:3000/api/reparaciones/new
@@ -92,7 +101,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 
 ###
 GET http://localhost:3000/api/clientes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ0NjIwMDQ1fQ.jtW5jgiD2fUJFy8wEWOI3Okih10fS_rJ93LKQOnNcMk
 
 
 ###########
@@ -181,8 +190,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 { 
-    "email": "luisfernandez@example.com",
-    "password": "LuisElec2025#"
+    "email": "fddf@gmail.com",
+    "password": "4444"
 }
 
 ###
@@ -205,6 +214,14 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/vehiculos
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+
+###
+POST http://localhost:3000/api/vehiculos/reparacion
+Content-Type: application/json
+
+{
+    "id":1
+}
 
 ###
 GET http://localhost:3000/api/vehiculos/1
@@ -244,8 +261,10 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 {
-    "id":"1"
+    "id":1
 }
+
+
 
 
 
