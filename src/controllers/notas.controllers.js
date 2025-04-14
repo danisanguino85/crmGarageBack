@@ -19,7 +19,7 @@ const getNotaById = async (req, res, next) => {
 };
 const getNotaByReparacion = async (req, res, next) => {
     try {
-        const notas = await notasModel.selectNotaByReparacion(req.body);
+        const notas = await notasModel.selectNotaByReparacion(req.body.id);
         res.json(notas);
     } catch (error) {
         next(error);
