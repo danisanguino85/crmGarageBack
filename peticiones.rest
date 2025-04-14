@@ -19,7 +19,6 @@ GET http://localhost:3000/api/reparaciones/usuario
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ0NjIwMDQ1fQ.jtW5jgiD2fUJFy8wEWOI3Okih10fS_rJ93LKQOnNcMk
 
 
-
 ###crear reparacion
 POST http://localhost:3000/api/reparaciones/new
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
@@ -136,23 +135,22 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/usuarios/register
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 Content-Type: application/json
 
 {
-  "nombre": "Luis Alberto",
+  "nombre": "mamady Alberto",
   "apellidos": "Fernández Ruiz",
-  "dni": "45730901P",
-  "telefono": "619023344",
-  "email": "luienandez@example.com",
+  "dni": "45730401P",
+  "telefono": "519023344",
+  "email": "luimnandez@example.com",
   "fecha_nacimiento": "1985-08-17",
   "direccion": "Calle del Automóvil 89, Valencia",
-  "numero_ss": "778039001322",
+  "numero_ss": "778079001325",
   "fecha_alta": "2024-03-10",
   "fecha_baja": "2025-03-10",
   "rol": "mecanico",
   "activo": 1,
-  "password": "LisElec2025#",
+  "password": "LimElec2025#",
   "fecha_actualizacion": "2025-04-11",
   "jornada": "completa",
   "foto_perfil": "https://example.com/foto-luis.jpg",
@@ -190,8 +188,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 { 
-    "email": "fddf@gmail.com",
-    "password": "4444"
+    "email": "luimnandez@example.com",
+    "password": "LimElec2025#"
 }
 
 ###
