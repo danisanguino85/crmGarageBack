@@ -7,11 +7,15 @@ const {
     createUsuario,
     updateUsuario,
     loginUsuario,
+    getAllAdmin,
+    getAllMecan,
 } = require("../../controllers/usuarios.controllers");
 const { checkToken } = require("../../middlewares/auth.middlewares");
 
 router.post("/login", loginUsuario);
 router.get("/", getAllUsuarios);
+router.get("/admin", getAllAdmin);
+router.get("/mecanico", getAllMecan);
 router.get("/:id", getUsuariosById);
 router.post("/tel", checkToken, getUsuariosTelefono);
 router.post("/email", getUsuariosByEmail);
