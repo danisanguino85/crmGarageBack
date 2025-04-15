@@ -12,6 +12,26 @@ const getAllUsuarios = async (req, res, next) => {
     }
 };
 
+const getAllAdmin = async (req, res, next) => {
+    try {
+        const admin = await usuariosModel.selectAllAdministradores();
+
+        res.json(admin);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const getAllMecan = async (req, res, next) => {
+    try {
+        const mecanicos = await usuariosModel.selectAllMecanicos();
+
+        res.json(mecanicos);
+    } catch (error) {
+        next(error);
+    }
+};
+
 const getUsuariosById = async (req, res, next) => {
     const { id } = req.params;
     try {
@@ -118,4 +138,6 @@ module.exports = {
     createUsuario,
     updateUsuario,
     loginUsuario,
+    getAllAdmin,
+    getAllMecan,
 };

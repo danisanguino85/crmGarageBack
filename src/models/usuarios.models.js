@@ -6,6 +6,22 @@ const selectAllUsuarios = async () => {
     return result;
 };
 
+const selectAllAdministradores = async () => {
+    const [result] = await db.query(
+        "select * from usuarios where rol = 'admin'",
+    );
+
+    return result;
+};
+
+const selectAllMecanicos = async () => {
+    const [result] = await db.query(
+        "select * from usuarios where rol = 'mecanico'",
+    );
+
+    return result;
+};
+
 const selectUsuarioById = async (id) => {
     const [result] = await db.query("select * from usuarios where id = ?", [
         id,
@@ -87,7 +103,7 @@ const insertUsuario = async ({
     }
 };
 
-updateUsuarioById = async (
+const updateUsuarioById = async (
     id,
     {
         nombre,
@@ -142,4 +158,6 @@ module.exports = {
     selectUsuarioByEmail,
     insertUsuario,
     updateUsuarioById,
+    selectAllAdministradores,
+    selectAllMecanicos,
 };
