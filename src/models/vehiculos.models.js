@@ -21,8 +21,24 @@ const selectVehiculoById = async (vehiculoId) => {
     return result[0];
 };
 
+const insertVehiculo = async ({
+    matricula,
+    bastidor,
+    marca,
+    modelo,
+    fecha_matriculacion,
+    km,
+}) => {
+    const [result] = await db.query(
+        "insert into vehiculos (matricula,bastidor,marca,modelo,fecha_matriculacion,km)values(?,?,?,?,?,?)",
+        [matricula, bastidor, marca, modelo, fecha_matriculacion, km],
+    );
+    return result;
+};
+
 module.exports = {
     selectAllVehiculos,
     selectVehiculoByMatricula,
     selectVehiculoById,
+    insertVehiculo,
 };
