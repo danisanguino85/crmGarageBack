@@ -22,6 +22,7 @@ const getByIdReparaciones = async (req, res, next) => {
 };
 
 const getReparacionesByMecanico = async (req, res, next) => {
+
     try {
         const reparaciones =
             await reparacionesModel.selectReparacionesByMecanico(
