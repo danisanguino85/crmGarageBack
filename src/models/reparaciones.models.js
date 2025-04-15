@@ -28,7 +28,7 @@ const selectVehiculoByReparacion = async (reparacionId) => {
         "select vehiculos.matricula, vehiculos.marca,vehiculos.modelo,vehiculos.fecha_matriculacion,vehiculos.km, vehiculos.fecha_entrada, vehiculos.fecha_salida from vehiculos join reparaciones on vehiculos_id = vehiculos.id where reparaciones.id= ?",
         [reparacionId],
     );
-    return result;
+    return result[0];
 };
 
 const insertRepacion = async ({ estado, presupuesto, precio_total }) => {
