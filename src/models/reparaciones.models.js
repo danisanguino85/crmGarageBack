@@ -1,7 +1,9 @@
 const db = require("../config/db.config");
 
 const selectAllReparaciones = async () => {
-    const [result] = await db.query("select*from reparaciones");
+    const [result] = await db.query(
+        "select reparaciones.*, usuarios.nombre as mecanico, vehiculos.matricula as vehiculo from reparaciones join usuarios on reparaciones.usuarios_id=usuarios.id join vehiculos  on reparaciones.vehiculos_id=vehiculos.id",
+    );
 
     return result;
 };
