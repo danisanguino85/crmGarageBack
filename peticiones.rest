@@ -16,7 +16,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 
 ###
 GET http://localhost:3000/api/reparaciones/usuario
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ0NjIwMDQ1fQ.jtW5jgiD2fUJFy8wEWOI3Okih10fS_rJ93LKQOnNcMk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ0NzE0OTQyfQ.cQVvG70-71MQgcGsy1ruwb_OzpUCSfU3cwSiQoUUbUc
 
 
 ###crear reparacion
@@ -188,8 +188,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 { 
-    "email": "luimnandez@example.com",
-    "password": "LimElec2025#"
+    "email": "fddf@gmail.com",
+    "password": "4444"
 }
 
 ###
