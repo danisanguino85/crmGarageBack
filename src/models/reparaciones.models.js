@@ -8,6 +8,30 @@ const selectAllReparaciones = async () => {
     return result;
 };
 
+const selectAllProgreso = async () => {
+    const [result] = await db.query(
+        "select * from reparaciones where estado = 'en_progreso'",
+    );
+
+    return result;
+};
+
+const selectAllPendiente = async () => {
+    const [result] = await db.query(
+        "select * from reparaciones where estado = 'pendiente'",
+    );
+
+    return result;
+};
+
+const selectAllFinalizado = async () => {
+    const [result] = await db.query(
+        "select * from reparaciones where estado = 'finalizado'",
+    );
+
+    return result;
+};
+
 const selectByIdReparaciones = async (idReparaciones) => {
     const [result] = await db.query(
         "select * from crm_garage.reparaciones where reparaciones.id=?",
@@ -59,4 +83,7 @@ module.exports = {
     updateReparacionById,
     selectReparacionesByMecanico,
     selectVehiculoByReparacion,
+    selectAllProgreso,
+    selectAllPendiente,
+    selectAllFinalizado,
 };

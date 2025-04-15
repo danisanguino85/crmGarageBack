@@ -6,8 +6,17 @@
 GET http://localhost:3000/api/reparaciones
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ0NjIwMDQ1fQ.jtW5jgiD2fUJFy8wEWOI3Okih10fS_rJ93LKQOnNcMk
 
+###
+GET http://localhost:3000/api/reparaciones/progreso
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 ###
+GET http://localhost:3000/api/reparaciones/pendiente
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+
+###
+GET http://localhost:3000/api/reparaciones/finalizado
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 
 ###
@@ -194,8 +203,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 { 
-    "email": "fddf@gmail.com",
-    "password": "4444"
+    "email": "leote@example.com",
+    "password": "123"
 }
 
 ###

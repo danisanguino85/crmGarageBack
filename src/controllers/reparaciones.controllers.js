@@ -10,6 +10,36 @@ const getAllReparaciones = async (req, res, next) => {
     }
 };
 
+const getAllProgreso = async (req, res, next) => {
+    try {
+        const progreso = await reparacionesModel.selectAllProgreso();
+
+        res.json(progreso);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const getAllPendiente = async (req, res, next) => {
+    try {
+        const pendiente = await reparacionesModel.selectAllPendiente();
+
+        res.json(pendiente);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const getAllFinalizado = async (req, res, next) => {
+    try {
+        const finalizado = await reparacionesModel.selectAllFinalizado();
+
+        res.json(finalizado);
+    } catch (error) {
+        next(error);
+    }
+};
+
 const getByIdReparaciones = async (req, res, next) => {
     const { idReparaciones } = req.params;
     try {
@@ -22,7 +52,6 @@ const getByIdReparaciones = async (req, res, next) => {
 };
 
 const getReparacionesByMecanico = async (req, res, next) => {
-
     try {
         const reparaciones =
             await reparacionesModel.selectReparacionesByMecanico(
@@ -90,4 +119,7 @@ module.exports = {
     updateReparacion,
     getReparacionesByMecanico,
     getVehiculoByReparacion,
+    getAllProgreso,
+    getAllPendiente,
+    getAllFinalizado,
 };
