@@ -111,6 +111,10 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 GET http://localhost:3000/api/clientes
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ0NjIwMDQ1fQ.jtW5jgiD2fUJFy8wEWOI3Okih10fS_rJ93LKQOnNcMk
 
+###
+GET http://localhost:3000/api/clientes/cliente/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInJvbCI6Im1lY2FuaWNvIiwiaWF0IjoxNzQ0NjMwNTM5fQ.fgnvtlN_FPq3Wk-obnB8azU3MVeqpHpRWuyAeFqGNdo
+
 
 ###########
 # usuarios #

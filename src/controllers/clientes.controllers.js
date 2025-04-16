@@ -63,6 +63,18 @@ const updateCliente = async (req, res, next) => {
     }
 };
 
+const getClienteByReparacion = async (req, res, next) => {
+    const { reparacionId } = req.params;
+
+    try {
+        const cliente =
+            await clientesModel.selectClienteByReparacion(reparacionId);
+        res.json(cliente);
+    } catch (error) {
+        console.log(error)
+    }
+};
+
 module.exports = {
     getAllClientes,
     getClientesByTelefono,
@@ -70,4 +82,5 @@ module.exports = {
     getClienteById,
     createCliente,
     updateCliente,
+    getClienteByReparacion,
 };
