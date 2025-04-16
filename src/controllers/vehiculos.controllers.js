@@ -30,9 +30,22 @@ const getVehiculoByMatricula = async (req, res, next) => {
         console.log(error);
     }
 };
+const createVehiculo = async (req, res, next) => {
+    try {
+        const result = await vehiculosModel.insertVehiculo(req.body);
+        const vehiculo = await vehiculosModel.selectVehiculoById(
+            result.insertId,
+        );
+
+        res.json(vehiculo);
+    } catch (error) {
+        next(error);
+    }
+};
 
 module.exports = {
     getAllVehiculos,
     getVehiculoByMatricula,
     getVehiculoById,
+    createVehiculo,
 };
