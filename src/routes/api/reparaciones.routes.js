@@ -10,6 +10,7 @@ const {
     getAllFinalizado,
     getAllPorFechaIngreso,
     getAllFechaAntigua,
+    getReparacionesByVehiculo,
 } = require("../../controllers/reparaciones.controllers");
 
 router.get("/", getAllReparaciones);
@@ -22,6 +23,7 @@ router.get("/pendiente", getAllPendiente);
 router.get("/:idReparaciones", getByIdReparaciones);
 
 router.post("/new", createReparacion);
+router.post("/vehiculo", getReparacionesByVehiculo);
 router.put("/:idReparaciones", updateReparacion);
 
 module.exports = router;
