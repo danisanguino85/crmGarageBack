@@ -32,6 +32,22 @@ const selectAllFinalizado = async () => {
     return result;
 };
 
+const selectAllPorFechaIngreso = async () => {
+    const [result] = await db.query(
+        "select * from reparaciones order by fecha_ingreso asc",
+    );
+
+    return result;
+};
+
+const selectAllPorFechaIngresoAntigua = async () => {
+    const [result] = await db.query(
+        "select * from reparaciones order by fecha_ingreso desc",
+    );
+
+    return result;
+};
+
 const selectByIdReparaciones = async (idReparaciones) => {
     const [result] = await db.query(
         "select * from crm_garage.reparaciones where reparaciones.id=?",
@@ -54,7 +70,6 @@ const selectVehiculoByReparacion = async (reparacionId) => {
     );
     return result[0];
 };
-
 
 const insertRepacion = async ({ estado, presupuesto, precio_total }) => {
     const [result] = await db.query(
@@ -87,4 +102,6 @@ module.exports = {
     selectAllProgreso,
     selectAllPendiente,
     selectAllFinalizado,
+    selectAllPorFechaIngreso,
+    selectAllPorFechaIngresoAntigua,
 };

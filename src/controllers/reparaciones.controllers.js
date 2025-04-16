@@ -40,6 +40,27 @@ const getAllFinalizado = async (req, res, next) => {
     }
 };
 
+const getAllPorFechaIngreso = async (req, res, next) => {
+    try {
+        const fechaIngreso = await reparacionesModel.selectAllPorFechaIngreso();
+
+        res.json(fechaIngreso);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const getAllFechaAntigua = async (req, res, next) => {
+    try {
+        const fechaAntigua =
+            await reparacionesModel.selectAllPorFechaIngresoAntigua();
+
+        res.json(fechaAntigua);
+    } catch (error) {
+        next(error);
+    }
+};
+
 const getByIdReparaciones = async (req, res, next) => {
     const { idReparaciones } = req.params;
     try {
@@ -122,4 +143,6 @@ module.exports = {
     getAllProgreso,
     getAllPendiente,
     getAllFinalizado,
+    getAllPorFechaIngreso,
+    getAllFechaAntigua,
 };
