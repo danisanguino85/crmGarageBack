@@ -213,6 +213,12 @@ Content-Type: application/json
 ###########
 # vehiculos #
 ###########
+###
+GET http://localhost:3000/api/vehiculos/vehiculo/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+
+
+
 
 ###
 POST http://localhost:3000/api/vehiculos/nuevoVehiculo/3

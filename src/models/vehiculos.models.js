@@ -20,6 +20,14 @@ const selectVehiculoById = async (vehiculoId) => {
     if (result === 0) return null;
     return result[0];
 };
+const selectVehiculoByCliente = async (clienteId) => {
+    const [result] = await db.query(
+        "SELECT * FROM vehiculos v join clientes_has_vehiculos cv on v.id= cv.vehiculos_id join clientes c on c.id= cv.clientes_id where c.id=3",
+        [clienteId],
+    );
+
+    return result;
+};
 
 const insertVehiculo = async ({
     matricula,
@@ -49,4 +57,5 @@ module.exports = {
     selectVehiculoById,
     insertVehiculo,
     insertRelacionVehiculoCliente,
+    selectVehiculoByCliente,
 };

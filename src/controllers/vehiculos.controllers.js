@@ -30,6 +30,18 @@ const getVehiculoByMatricula = async (req, res, next) => {
         console.log(error);
     }
 };
+
+const getVehiculoByCliente = async (req, res, next) => {
+    const { clienteId } = req.params;
+    try {
+        const vehiculo =
+            await vehiculosModel.selectVehiculoByCliente(clienteId);
+        console.log(vehiculo);
+        res.json(vehiculo);
+    } catch (error) {
+        next.error(error);
+    }
+};
 const createVehiculo = async (req, res, next) => {
     const { clienteId } = req.params;
 
@@ -43,8 +55,6 @@ const createVehiculo = async (req, res, next) => {
             vehiculo.id,
             clienteId,
         );
-        console.log(vehiculo.insertId);
-        console.log(clienteId);
 
         res.json(vehiculo, clienteId);
     } catch (error) {
@@ -57,4 +67,5 @@ module.exports = {
     getVehiculoByMatricula,
     getVehiculoById,
     createVehiculo,
+    getVehiculoByCliente,
 };
