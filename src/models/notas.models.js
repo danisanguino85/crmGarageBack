@@ -27,9 +27,16 @@ const selectNotaByReparacion = async (reparacionId) => {
     return result;
 };
 
+const selectReparacionAllNotas = async (reparacionId) => {
+    const [result] = await db.query('SELECT notas.* FROM crm_garage.notas join reparaciones on reparaciones.id = notas.reparaciones_id where reparaciones.id=?',[reparacionId])
+
+    return result;
+};
+
 module.exports = {
     selectAllNotas,
     selectNotaById,
     insertNota,
     selectNotaByReparacion,
+    selectReparacionAllNotas,
 };

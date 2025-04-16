@@ -37,9 +37,36 @@ const createNota = async (req, res, next) => {
     }
 };
 
+const getReparacionAllNotas = async (req, res, next) => {
+    const { reparacionId } = req.params;
+
+    try {
+        const reparacionNotas =
+            await notasModel.selectReparacionAllNotas(reparacionId);
+        res.json(reparacionNotas);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const deleteNota = async (req, res, next) => {
+    try {
+        const deletedNota = await notasModel.getNotaById();
+        const result = await notasModel.selectDeleteNota();
+        res.json(deletedNota);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const updateNota = async (req, res, next) => {};
+
 module.exports = {
     getAllNotas,
     getNotaById,
     createNota,
     getNotaByReparacion,
+    getReparacionAllNotas,
+    deleteNota,
+    updateNota,
 };
