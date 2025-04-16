@@ -35,10 +35,18 @@ const insertVehiculo = async ({
     );
     return result;
 };
+const insertRelacionVehiculoCliente = async (vehiculos_id, clienteId) => {
+    const [result] = await db.query(
+        "insert into clientes_has_vehiculos (vehiculos_id, clientes_id) values (?, ?)",
+        [vehiculos_id, clienteId],
+    );
+    return result;
+};
 
 module.exports = {
     selectAllVehiculos,
     selectVehiculoByMatricula,
     selectVehiculoById,
     insertVehiculo,
+    insertRelacionVehiculoCliente,
 };

@@ -31,13 +31,22 @@ const getVehiculoByMatricula = async (req, res, next) => {
     }
 };
 const createVehiculo = async (req, res, next) => {
+    const { clienteId } = req.params;
+
     try {
         const result = await vehiculosModel.insertVehiculo(req.body);
         const vehiculo = await vehiculosModel.selectVehiculoById(
             result.insertId,
         );
 
-        res.json(vehiculo);
+        await vehiculosModel.insertRelacionVehiculoCliente(
+            vehiculo.id,
+            clienteId,
+        );
+        console.log(vehiculo.insertId);
+        console.log(clienteId);
+
+        res.json(vehiculo, clienteId);
     } catch (error) {
         next(error);
     }
