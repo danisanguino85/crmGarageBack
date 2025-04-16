@@ -112,8 +112,6 @@ const loginUsuario = async (req, res, next) => {
 
     const passwordIsValid = bcrypt.compareSync(password, emailIsValid.password);
 
-    console.log(emailIsValid.password);
-
     if (!passwordIsValid) {
         return res.status(401).json({
             message: "Usuario no encontrado, email o/y password incorrecta",

@@ -36,7 +36,7 @@ const getVehiculoByCliente = async (req, res, next) => {
     try {
         const vehiculo =
             await vehiculosModel.selectVehiculoByCliente(clienteId);
-        console.log(vehiculo);
+
         res.json(vehiculo);
     } catch (error) {
         next.error(error);

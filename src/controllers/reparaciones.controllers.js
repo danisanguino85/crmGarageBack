@@ -60,6 +60,16 @@ const getAllFechaAntigua = async (req, res, next) => {
         next(error);
     }
 };
+const getReparacionesByVehiculo = async (req, res, next) => {
+    try {
+        const { vehiculoId } = req.body;
+        const reparaciones =
+            await reparacionesModel.selectReparacionesByVehiculo(vehiculoId);
+        res.json(reparaciones);
+    } catch (error) {
+        next(error);
+    }
+};
 
 const getByIdReparaciones = async (req, res, next) => {
     const { idReparaciones } = req.params;
@@ -145,4 +155,5 @@ module.exports = {
     getAllFinalizado,
     getAllPorFechaIngreso,
     getAllFechaAntigua,
+    getReparacionesByVehiculo,
 };
