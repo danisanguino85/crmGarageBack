@@ -54,6 +54,22 @@ const updateClienteById = async (
     return result;
 };
 
+const selectClienteByReparacion = async (reparacionId) => {
+    const [result] = await db.query(
+        `
+        SELECT c.* 
+        FROM crm_garage.reparaciones r
+        JOIN vehiculos v ON r.vehiculos_id = v.id
+        JOIN clientes_has_vehiculos cv ON v.id = cv.vehiculos_id
+        JOIN clientes c ON cv.clientes_id = c.id
+        WHERE r.id = ?
+      `,
+        [reparacionId],
+    );
+
+    return result[0];
+};
+
 module.exports = {
     selectAllClientes,
     selectClientesByTelefono,
@@ -61,4 +77,5 @@ module.exports = {
     selectClienteById,
     insertCliente,
     updateClienteById,
+    selectClienteByReparacion,
 };
