@@ -10,7 +10,7 @@ const selectAllReparaciones = async () => {
 
 const selectAllProgreso = async () => {
     const [result] = await db.query(
-        "select * from reparaciones where estado = 'en_progreso'",
+        "select reparaciones.*, usuarios.nombre as mecanico, vehiculos.matricula as vehiculo from reparaciones join usuarios on reparaciones.usuarios_id=usuarios.id join vehiculos  on reparaciones.vehiculos_id=vehiculos.id where estado = 'en_progreso'",
     );
 
     return result;
@@ -18,7 +18,7 @@ const selectAllProgreso = async () => {
 
 const selectAllPendiente = async () => {
     const [result] = await db.query(
-        "select * from reparaciones where estado = 'pendiente'",
+        "select reparaciones.*, usuarios.nombre as mecanico, vehiculos.matricula as vehiculo from reparaciones join usuarios on reparaciones.usuarios_id=usuarios.id join vehiculos  on reparaciones.vehiculos_id=vehiculos.id where estado = 'pendiente'",
     );
 
     return result;
@@ -26,7 +26,7 @@ const selectAllPendiente = async () => {
 
 const selectAllFinalizado = async () => {
     const [result] = await db.query(
-        "select * from reparaciones where estado = 'finalizado'",
+        "select reparaciones.*, usuarios.nombre as mecanico, vehiculos.matricula as vehiculo from reparaciones join usuarios on reparaciones.usuarios_id=usuarios.id join vehiculos  on reparaciones.vehiculos_id=vehiculos.id where estado = 'finalizado'",
     );
 
     return result;
@@ -34,7 +34,7 @@ const selectAllFinalizado = async () => {
 
 const selectAllPorFechaIngreso = async () => {
     const [result] = await db.query(
-        "select * from reparaciones order by fecha_ingreso asc",
+        "select reparaciones.*, usuarios.nombre as mecanico, vehiculos.matricula as vehiculo from reparaciones join usuarios on reparaciones.usuarios_id=usuarios.id join vehiculos  on reparaciones.vehiculos_id=vehiculos.id order by fecha_ingreso asc",
     );
 
     return result;
@@ -42,7 +42,7 @@ const selectAllPorFechaIngreso = async () => {
 
 const selectAllPorFechaIngresoAntigua = async () => {
     const [result] = await db.query(
-        "select * from reparaciones order by fecha_ingreso desc",
+        "select reparaciones.*, usuarios.nombre as mecanico, vehiculos.matricula as vehiculo from reparaciones join usuarios on reparaciones.usuarios_id=usuarios.id join vehiculos  on reparaciones.vehiculos_id=vehiculos.id order by fecha_ingreso desc",
     );
 
     return result;

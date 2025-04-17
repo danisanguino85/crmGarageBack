@@ -22,7 +22,7 @@ const selectVehiculoById = async (vehiculoId) => {
 };
 const selectVehiculoByCliente = async (clienteId) => {
     const [result] = await db.query(
-        "SELECT * FROM vehiculos v join clientes_has_vehiculos cv on v.id= cv.vehiculos_id join clientes c on c.id= cv.clientes_id where c.id=3",
+        "SELECT marca, modelo, matricula, vehiculos_id as id FROM vehiculos v join clientes_has_vehiculos cv on v.id= cv.vehiculos_id join clientes c on c.id= cv.clientes_id where c.id=?",
         [clienteId],
     );
 

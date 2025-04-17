@@ -99,11 +99,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 {
-    "nombre":"Belinda",
+    "nombre":"Raquel",
     "apellidos":"Moreno Cortés",
-    "dni":"09398765e",
-    "telefono":"634567654",
-    "email":"beli@gmail.com",
+    "dni":"09308765e",
+    "telefono":"614567654",
+    "email":"bli@gmail.com",
     "direccion":"C/ Gran Vía 32, Madrid"
 }
 
@@ -280,7 +280,11 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/api/vehiculos/1
+GET http://localhost:3000/api/vehiculos/46
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+
+###
+GET http://localhost:3000/api/vehiculos/vehiculo/2
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 
