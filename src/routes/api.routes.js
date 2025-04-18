@@ -7,5 +7,6 @@ router.use("/vehiculos", require("./api/vehiculos.routes"));
 router.use("/clientes", checkToken, require("../routes/api/clientes.routes"));
 router.use("/usuarios", require("./api/usuarios.routes"));
 router.use("/notas", require("./api/notas.routes"));
+router.use("/mailing", require("./api/mailing.routes"));
 
 module.exports = router;

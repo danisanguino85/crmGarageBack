@@ -243,8 +243,6 @@ Content-Type: application/json
     "marca": "honda",
     "modelo": "civic",
     "fecha_matriculacion": "1999-11-11",
-    "km": "100000"
-
 }
 
 
@@ -315,7 +313,20 @@ Content-Type: application/json
 }
 
 
+###########
+# mailing #
+###########
 
+###
+POST http://localhost:3000/api/mailing
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Content-Type: application/json
+
+{
+    "nombre":"dani",
+    "email": "sanguinad@gmail.com",
+    "mensaje":"jean francooooooooooooo paquete"
+}
 
 
 

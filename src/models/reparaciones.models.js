@@ -65,7 +65,7 @@ const selectReparacionesByMecanico = async (usuarioId) => {
 };
 const selectVehiculoByReparacion = async (reparacionId) => {
     const [result] = await db.query(
-        "select vehiculos.matricula, vehiculos.marca,vehiculos.modelo,vehiculos.fecha_matriculacion,vehiculos.km, vehiculos.fecha_entrada, vehiculos.fecha_salida from vehiculos join reparaciones on vehiculos_id = vehiculos.id where reparaciones.id= ?",
+        "select vehiculos.matricula, vehiculos.marca,vehiculos.modelo,vehiculos.fecha_matriculacion, vehiculos.fecha_entrada, vehiculos.fecha_salida from vehiculos join reparaciones on vehiculos_id = vehiculos.id where reparaciones.id= ?",
         [reparacionId],
     );
     return result[0];

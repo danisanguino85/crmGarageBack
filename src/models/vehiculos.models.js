@@ -35,11 +35,10 @@ const insertVehiculo = async ({
     marca,
     modelo,
     fecha_matriculacion,
-    km,
 }) => {
     const [result] = await db.query(
-        "insert into vehiculos (matricula,bastidor,marca,modelo,fecha_matriculacion,km)values(?,?,?,?,?,?)",
-        [matricula, bastidor, marca, modelo, fecha_matriculacion, km],
+        "insert into vehiculos (matricula,bastidor,marca,modelo,fecha_matriculacion)values(?,?,?,?,?)",
+        [matricula, bastidor, marca, modelo, fecha_matriculacion],
     );
     return result;
 };
