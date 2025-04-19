@@ -5,16 +5,15 @@ const {
     createNota,
     getNotaByReparacion,
     getReparacionAllNotas,
-    updateNota,
-    deleteNota
+    insertReparacionNota
 } = require("../../controllers/notas.controllers");
 
 router.get("/", getAllNotas);
 router.get("/:notaId", getNotaById);
 router.get('/nota/:reparacionId', getReparacionAllNotas);
 
-router.put('/:notaId', updateNota)
-router.delete('/:notaId', deleteNota)
+
+router.post('/nota/:reparacionId', insertReparacionNota)
 
 
 router.post("/", createNota);
