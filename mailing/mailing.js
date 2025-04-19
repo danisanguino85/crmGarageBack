@@ -1,6 +1,5 @@
 const nodemailer = require("nodemailer");
 //const bodyParser = require("body-parser");
-const { post } = require("../src/app");
 
 const sendMail = async (req, res) => {
     const { nombre, email, mensaje } = req.body;
