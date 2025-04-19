@@ -281,18 +281,14 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 ###########
 
 
-###
+### getallnotas
 GET http://localhost:3000/api/notas
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
-###
-GET http://localhost:3000/api/notas/2
+### get nota by id
+GET http://localhost:3000/api/notas/8
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
-Content-Type: application/json
 
-{
-    "notas":"eyyyyyyyy"
-}
 
 ###
 POST http://localhost:3000/api/notas
@@ -312,6 +308,14 @@ Content-Type: application/json
     "id":1
 }
 
+### creame nota para una reparacion
+POST http://localhost:3000/api/notas/nota/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInJvbCI6Im1lY2FuaWNvIiwiaWF0IjoxNzQ0NjMwNTM5fQ.fgnvtlN_FPq3Wk-obnB8azU3MVeqpHpRWuyAeFqGNdo
+Content-Type: application/json
+
+{
+    "notas":"Se ha realizado la revisión completa del sistema de frenos. Se sustituyeron las pastillas delanteras y se verificó el nivel de líquido. Todo quedó ajustado y funcionando correctamente."
+}
 
 ###########
 # mailing #

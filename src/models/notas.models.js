@@ -28,8 +28,19 @@ const selectNotaByReparacion = async (reparacionId) => {
 };
 
 const selectReparacionAllNotas = async (reparacionId) => {
-    const [result] = await db.query('SELECT notas.* FROM crm_garage.notas join reparaciones on reparaciones.id = notas.reparaciones_id where reparaciones.id=?',[reparacionId])
+    const [result] = await db.query(
+        "SELECT notas.* FROM crm_garage.notas join reparaciones on reparaciones.id = notas.reparaciones_id where reparaciones.id=? order by created_At desc",
+        [reparacionId],
+    );
 
+    return result;
+};
+
+const selectInsertReparacionNota = async ({ notas }, reparacionId) => {
+    const [result] = await db.query(
+        "INSERT INTO crm_garage.notas (notas, reparaciones_id) VALUES (?,?)",
+        [notas, reparacionId],
+    );
     return result;
 };
 
@@ -39,4 +50,7 @@ module.exports = {
     insertNota,
     selectNotaByReparacion,
     selectReparacionAllNotas,
+    selectInsertReparacionNota,
 };
+
+
