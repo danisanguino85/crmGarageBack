@@ -106,14 +106,10 @@ const getVehiculoByReparacion = async (req, res, next) => {
 };
 
 const createReparacion = async (req, res, next) => {
-    const { estado, presupuesto, precio_total } = req.body;
+    const { presupuesto, usuarios_id, vehiculos_id } = req.body;
 
     try {
-        const result = await reparacionesModel.insertRepacion(
-            estado,
-            presupuesto,
-            precio_total,
-        );
+        const result = await reparacionesModel.insertRepacion(req.body);
 
         const reparacion = await reparacionesModel.selectByIdReparaciones(
             result.insertId,

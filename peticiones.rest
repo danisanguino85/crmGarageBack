@@ -42,21 +42,30 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 {
-   "estado": "pendiente", 
-   "presupuesto": 20.24, 
-   "precio_total": 50.33
+    "presupuesto":3000.99,
+    "usuarios_id":5,
+    "vehiculos_id":25   
+}
+
+###
+POST http://localhost:3000/api/reparaciones/vehiculo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Content-Type: application/json
+
+{
+    "vehiculoId":1  
 }
 
 
 ###actualizar una reparacion
 PUT http://localhost:3000/api/reparaciones/30
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
-Content-Type: application/json
+ontent-Type: application/json
 
 {
-   "estado": "finalizado", 
-   "presupuesto": 20.24, 
-   "precio_total": 50.33
+  "presupuesto": 3000.99,
+  "usuarios_id": 5,
+  "vehiculos_id": 25
 }
 
 

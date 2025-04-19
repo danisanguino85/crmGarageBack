@@ -73,16 +73,16 @@ const selectVehiculoByReparacion = async (reparacionId) => {
 
 const selectReparacionesByVehiculo = async (vehiculoId) => {
     const [result] = await db.query(
-        "SELECT reparaciones.* FROM reparaciones join vehiculos on vehiculos_id = vehiculos.id where vehiculos.id=?",
+        "SELECT reparaciones.id, reparaciones.estado, reparaciones.fecha_ingreso, reparaciones.fecha_salida, usuarios.nombre as mecanico FROM reparaciones join vehiculos on vehiculos_id = vehiculos.id join usuarios on reparaciones.usuarios_id = usuarios.id where vehiculos.id=?",
         [vehiculoId],
     );
     return result;
 };
 
-const insertRepacion = async ({ estado, presupuesto, precio_total }) => {
+const insertRepacion = async ({ presupuesto, usuarios_id, vehiculos_id }) => {
     const [result] = await db.query(
-        "insert into crm_garage.reparaciones (estado, presupuesto, precio_total) values (?,?,?)",
-        [estado, presupuesto, precio_total],
+        "INSERT INTO reparaciones (presupuesto, usuarios_id, vehiculos_id) VALUES (?,?,?)",
+        [presupuesto, usuarios_id, vehiculos_id],
     );
 
     return result;
