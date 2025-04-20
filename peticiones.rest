@@ -341,6 +341,33 @@ Content-Type: application/json
     "mensaje":"jean francooooooooooooo paquete"
 }
 
+###########
+# registro #
+###########
+
+###
+POST http://localhost:3000/api/registro/entrada
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Content-Type: application/json
+
+{
+    "salida":"2025-04-20 17:30:00",
+    "usuarios_id":2
+}
+
+###
+POST http://localhost:3000/api/registro/salida
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+Content-Type: application/json
+
+{
+    "salida":"2025-04-20 17:30:00",
+    "usuarios_id":1
+}
+
+###
+GET http://localhost:3000/api/registro/entradas/46
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 
 
