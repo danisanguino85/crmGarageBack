@@ -7,7 +7,7 @@ const selectAllClientes = async () => {
 };
 
 const selectClienteById = async (clienteId) => {
-    const [result] = await db.query("select*from clientes where id=?", [
+    const [result] = await db.query("select * from clientes where id=?", [
         clienteId,
     ]);
     if (result === 0) return null;

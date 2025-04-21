@@ -32,6 +32,18 @@ const getAllMecan = async (req, res, next) => {
     }
 };
 
+const getMecanicoByReparacion = async (req, res, next) => {
+    const { reparacionId } = req.params;
+    try {
+        const mecanico =
+            await usuariosModel.selectMecanicoByReparacion(reparacionId);
+
+        res.json(mecanico);
+    } catch (error) {
+        next(error);
+    }
+};
+
 const getUsuariosById = async (req, res, next) => {
     const { id } = req.params;
     try {
@@ -138,4 +150,5 @@ module.exports = {
     loginUsuario,
     getAllAdmin,
     getAllMecan,
+    getMecanicoByReparacion,
 };

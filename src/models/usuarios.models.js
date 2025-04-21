@@ -14,6 +14,14 @@ const selectAllAdministradores = async () => {
     return result;
 };
 
+const selectMecanicoByReparacion = async (reparacionId) => {
+    const [result] = await db.query(
+        "select nombre,apellidos from usuarios join reparaciones on usuarios.id = usuarios_id where reparaciones.id=?",
+        [reparacionId],
+    );
+    return result[0];
+};
+
 const selectAllMecanicos = async () => {
     const [result] = await db.query(
         "select * from usuarios where rol = 'mecanico'",
@@ -160,4 +168,5 @@ module.exports = {
     updateUsuarioById,
     selectAllAdministradores,
     selectAllMecanicos,
+    selectMecanicoByReparacion,
 };
