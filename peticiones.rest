@@ -68,6 +68,14 @@ ontent-Type: application/json
   "vehiculos_id": 25
 }
 
+### marccar reparacion como finalizada
+PATCH 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInJvbCI6Im1lY2FuaWNvIiwiaWF0IjoxNzQ0NjMwNTM5fQ.fgnvtlN_FPq3Wk-obnB8azU3MVeqpHpRWuyAeFqGNdo
+Content-Type: application/json
+
+{
+    "estado":"finalizado"
+}
 
 ###########
 # clientes #
@@ -316,6 +324,11 @@ Content-Type: application/json
 {
     "id":1
 }
+
+### get reparacion all notas
+GET http://localhost:3000/api/notas/nota/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInJvbCI6Im1lY2FuaWNvIiwiaWF0IjoxNzQ0NjMwNTM5fQ.fgnvtlN_FPq3Wk-obnB8azU3MVeqpHpRWuyAeFqGNdo
+
 
 ### creame nota para una reparacion
 POST http://localhost:3000/api/notas/nota/1

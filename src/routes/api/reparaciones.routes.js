@@ -11,6 +11,7 @@ const {
     getAllPorFechaIngreso,
     getAllFechaAntigua,
     getReparacionesByVehiculo,
+    marcarCompletada
 } = require("../../controllers/reparaciones.controllers");
 
 router.get("/", getAllReparaciones);
@@ -25,5 +26,6 @@ router.get("/:idReparaciones", getByIdReparaciones);
 router.post("/new", createReparacion);
 router.post("/vehiculo", getReparacionesByVehiculo);
 router.put("/:idReparaciones", updateReparacion);
+router.patch("/:idReparaciones", marcarCompletada);
 
 module.exports = router;

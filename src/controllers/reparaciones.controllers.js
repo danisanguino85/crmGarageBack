@@ -139,6 +139,25 @@ const updateReparacion = async (req, res, next) => {
     }
 };
 
+
+const marcarCompletada = async (req, res, next)=>{
+    const { idReparaciones } = req.params;
+
+    try {
+        const result = await reparacionesModel.selectMarcarCompeltado(
+            idReparaciones,
+            req.body,
+        );
+
+        const reparacion =
+            await reparacionesModel.selectByIdReparaciones(idReparaciones);
+
+        res.json(reparacion);
+    } catch (error) {
+        next(error);
+    }
+}
+
 module.exports = {
     getAllReparaciones,
     getByIdReparaciones,
@@ -152,4 +171,5 @@ module.exports = {
     getAllPorFechaIngreso,
     getAllFechaAntigua,
     getReparacionesByVehiculo,
+    marcarCompletada
 };
