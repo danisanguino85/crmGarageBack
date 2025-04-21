@@ -50,6 +50,16 @@ const selectUsuarioByEmail = async (email) => {
     return result[0];
 };
 
+const selectUsuarioByFoto = async (id) => {
+    const [result] = await db.query(
+        "select foto_perfil from usuarios where id = ?",
+        [id],
+    );
+
+    if (result.length === 0) return null;
+    return result[0];
+};
+
 const insertUsuario = async ({
     nombre,
     apellidos,
@@ -160,4 +170,5 @@ module.exports = {
     updateUsuarioById,
     selectAllAdministradores,
     selectAllMecanicos,
+    selectUsuarioByFoto,
 };
