@@ -150,17 +150,14 @@ GET http://localhost:3000/api/usuarios
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
 
 ###
-GET http://localhost:3000/api/usuarios/mecanico/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
-
-
-
-
-###
 GET http://localhost:3000/api/usuarios/admin
 
 ###
 GET http://localhost:3000/api/usuarios/mecanico
+
+###
+GET http://localhost:3000/api/usuarios/foto/3
+
 
 ###
 GET http://localhost:3000/api/usuarios/4

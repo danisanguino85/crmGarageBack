@@ -76,6 +76,16 @@ const getUsuariosByEmail = async (req, res, next) => {
     }
 };
 
+const getUsuariosByFoto = async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        const usuarios = await usuariosModel.selectUsuarioByFoto(id);
+        res.json(usuarios);
+    } catch (error) {
+        next(error);
+    }
+};
+
 const createUsuario = async (req, res, next) => {
     const { password } = req.body;
     req.body.password = bcrypt.hashSync(password, 10);
@@ -151,4 +161,5 @@ module.exports = {
     getAllAdmin,
     getAllMecan,
     getMecanicoByReparacion,
+    getUsuariosByFoto,
 };
