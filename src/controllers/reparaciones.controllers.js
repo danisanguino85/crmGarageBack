@@ -139,8 +139,7 @@ const updateReparacion = async (req, res, next) => {
     }
 };
 
-
-const marcarCompletada = async (req, res, next)=>{
+const marcarCompletada = async (req, res, next) => {
     const { idReparaciones } = req.params;
 
     try {
@@ -156,7 +155,7 @@ const marcarCompletada = async (req, res, next)=>{
     } catch (error) {
         next(error);
     }
-}
+};
 
 module.exports = {
     getAllReparaciones,
@@ -171,5 +170,5 @@ module.exports = {
     getAllPorFechaIngreso,
     getAllFechaAntigua,
     getReparacionesByVehiculo,
-    marcarCompletada
+    marcarCompletada,
 };

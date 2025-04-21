@@ -1,7 +1,10 @@
 const db = require("../config/db.config");
 
-const selectAllClientes = async () => {
-    const [result] = await db.query("select * from crm_garage.clientes");
+const selectAllClientes = async (desde, hasta) => {
+    const [result] = await db.query(
+        "select* from crm_garage.clientes limit ?,?",
+        [desde, hasta],
+    );
 
     return result;
 };
@@ -56,14 +59,9 @@ const updateClienteById = async (
 
 const selectClienteByReparacion = async (reparacionId) => {
     const [result] = await db.query(
-        `
-        SELECT c.* 
-        FROM crm_garage.reparaciones r
-        JOIN vehiculos v ON r.vehiculos_id = v.id
-        JOIN clientes_has_vehiculos cv ON v.id = cv.vehiculos_id
+        `SELECT c.* FROM crm_garage.reparaciones r JOIN vehiculos v ON r.vehiculos_id = v.id JOIN clientes_has_vehiculos cv ON v.id = cv.vehiculos_id
         JOIN clientes c ON cv.clientes_id = c.id
-        WHERE r.id = ?
-      `,
+        WHERE r.id = ?`,
         [reparacionId],
     );
 

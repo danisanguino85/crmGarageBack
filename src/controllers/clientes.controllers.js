@@ -1,8 +1,12 @@
 const clientesModel = require("../models/clientes.models");
 
 const getAllClientes = async (req, res, next) => {
+    const { desde, hasta } = req.params;
     try {
-        const clientes = await clientesModel.selectAllClientes();
+        const clientes = await clientesModel.selectAllClientes(
+            Number(desde),
+            Number(hasta),
+        );
         res.json(clientes);
     } catch (error) {
         next(error);
@@ -65,13 +69,12 @@ const updateCliente = async (req, res, next) => {
 
 const getClienteByReparacion = async (req, res, next) => {
     const { reparacionId } = req.params;
-
     try {
         const cliente =
             await clientesModel.selectClienteByReparacion(reparacionId);
         res.json(cliente);
     } catch (error) {
-        next(error)
+        next(error);
     }
 };
 

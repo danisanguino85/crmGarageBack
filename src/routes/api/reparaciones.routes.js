@@ -11,7 +11,7 @@ const {
     getAllPorFechaIngreso,
     getAllFechaAntigua,
     getReparacionesByVehiculo,
-    marcarCompletada
+    marcarCompletada,
 } = require("../../controllers/reparaciones.controllers");
 
 router.get("/", getAllReparaciones);
