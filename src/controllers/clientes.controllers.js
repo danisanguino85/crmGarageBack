@@ -71,7 +71,7 @@ const getClienteByReparacion = async (req, res, next) => {
             await clientesModel.selectClienteByReparacion(reparacionId);
         res.json(cliente);
     } catch (error) {
-        console.log(error)
+        next(error)
     }
 };
 

@@ -27,7 +27,7 @@ const getVehiculoByMatricula = async (req, res, next) => {
 
         res.json(vehiculo[0]);
     } catch (error) {
-        console.log(error);
+        next(error);
     }
 };
 
@@ -39,7 +39,7 @@ const getVehiculoByCliente = async (req, res, next) => {
 
         res.json(vehiculo);
     } catch (error) {
-        next.error(error);
+        next(error);
     }
 };
 const createVehiculo = async (req, res, next) => {
