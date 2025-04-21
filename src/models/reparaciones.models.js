@@ -100,6 +100,15 @@ const updateReparacionById = async (
     return result;
 };
 
+const selectMarcarCompeltado = async (idReparaciones, { estado }) => {
+    const [result] = await db.query(
+        `update crm_garage.reparaciones set estado=? where reparaciones.id = ${idReparaciones}`,
+        [estado],
+    );
+
+    return result;
+};
+
 module.exports = {
     selectAllReparaciones,
     selectByIdReparaciones,
@@ -113,4 +122,5 @@ module.exports = {
     selectAllPorFechaIngreso,
     selectAllPorFechaIngresoAntigua,
     selectReparacionesByVehiculo,
+    selectMarcarCompeltado,
 };
