@@ -188,22 +188,18 @@ POST http://localhost:3000/api/usuarios/register
 Content-Type: application/json
 
 {
-  "nombre": "mamady Alberto",
-  "apellidos": "Fernández Ruiz",
-  "dni": "45730401P",
-  "telefono": "519023344",
-  "email": "luimnandez@example.com",
-  "fecha_nacimiento": "1985-08-17",
-  "direccion": "Calle del Automóvil 89, Valencia",
-  "numero_ss": "778079001325",
-  "fecha_alta": "2024-03-10",
-  "fecha_baja": "2025-03-10",
-  "rol": "mecanico",
-  "activo": 1,
-  "password": "LimElec2025#",
-  "fecha_actualizacion": "2025-04-11",
+  "nombre": "jean franco",
+  "apellidos": "ravelo",
+  "dni": "09876748z",
+  "telefono": "333445567",
+  "email": "jean@gmail.com",
+  "fecha_nacimiento": "2005-08-18",
+  "direccion": "Calle del Automóvil 89, madrid",
+  "numero_ss": "738079892325",
+  "rol": "admin",
+  "password": "1234",
   "jornada": "completa",
-  "foto_perfil": "https://example.com/foto-luis.jpg",
+  "foto_perfil": "https://example.com/foto-luif.jpg",
   "especialidad": "híbridos_y_eléctricos"
 }
 
