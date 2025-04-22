@@ -1,6 +1,10 @@
 const usuariosModel = require("../models/usuarios.models");
 const bcrypt = require("bcryptjs");
 const { createToken } = require("../helpers/utils");
+const multer = require("multer");
+const upload = multer({ dest: "public/images" });
+// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
+const fs = require("fs");
 
 const getAllUsuarios = async (req, res, next) => {
     try {
@@ -115,6 +119,28 @@ const updateUsuario = async (req, res, next) => {
     }
 };
 
+const updateimagen = async (req, res, next) => {
+    // biome-ignore lint/style/useTemplate: <explanation>
+    const extension = "." + req.file.mimetype.split("/")[1];
+
+    const newNombre = req.file.filename + extension;
+
+    const newRuta = req.file.path + extension;
+
+    fs.renameSync(req.file.path, newRuta);
+
+    const { filename } = req.file;
+    const { id } = req.params;
+
+    try {
+        const result = await usuariosModel.updateUsuarioimagen(id, newNombre);
+        const usuarios = await usuariosModel.selectUsuarioById(id);
+        res.json(usuarios);
+    } catch (error) {
+        next(error);
+    }
+};
+
 const loginUsuario = async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -162,4 +188,5 @@ module.exports = {
     getAllMecan,
     getMecanicoByReparacion,
     getUsuariosByFoto,
+    updateimagen,
 };

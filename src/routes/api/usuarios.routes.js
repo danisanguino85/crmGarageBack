@@ -1,4 +1,6 @@
 const router = require("express").Router();
+const multer = require("multer");
+const upload = multer({ dest: "public/images" });
 const {
     getAllUsuarios,
     getUsuariosById,
@@ -11,6 +13,7 @@ const {
     getAllMecan,
     getMecanicoByReparacion,
     getUsuariosByFoto,
+    updateimagen,
 } = require("../../controllers/usuarios.controllers");
 const { checkToken } = require("../../middlewares/auth.middlewares");
 
@@ -24,6 +27,7 @@ router.get("/foto/:id", getUsuariosByFoto);
 router.post("/tel", checkToken, getUsuariosTelefono);
 router.post("/email", getUsuariosByEmail);
 router.post("/register", createUsuario);
+router.put("/imagen/:id", upload.single("imagen"), updateimagen);
 router.put("/update/:id", updateUsuario);
 
 module.exports = router;

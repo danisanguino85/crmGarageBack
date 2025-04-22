@@ -169,6 +169,15 @@ const updateUsuarioById = async (
     return result;
 };
 
+const updateUsuarioimagen = async (id, imagen) => {
+    console.log(typeof imagen, id);
+    const [result] = await db.query(
+        "UPDATE usuarios SET foto_perfil = ? WHERE id = ?",
+        [imagen, id],
+    );
+    return result;
+};
+
 module.exports = {
     selectAllUsuarios,
     selectUsuarioById,
@@ -180,4 +189,5 @@ module.exports = {
     selectAllMecanicos,
     selectMecanicoByReparacion,
     selectUsuarioByFoto,
+    updateUsuarioimagen,
 };
