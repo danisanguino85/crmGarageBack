@@ -43,6 +43,13 @@ const selectInsertReparacionNota = async ({ notas }, reparacionId) => {
     );
     return result;
 };
+const insertReparacionNota = async (notas, reparacionId) => {
+    const [result] = await db.query(
+        "INSERT INTO crm_garage.notas (notas, reparaciones_id) VALUES (?,?)",
+        [notas, reparacionId],
+    );
+    return result;
+};
 
 module.exports = {
     selectAllNotas,
@@ -51,6 +58,5 @@ module.exports = {
     selectNotaByReparacion,
     selectReparacionAllNotas,
     selectInsertReparacionNota,
+    insertReparacionNota,
 };
-
-

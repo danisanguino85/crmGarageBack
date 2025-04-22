@@ -44,7 +44,9 @@ Content-Type: application/json
 {
     "presupuesto":3000.99,
     "usuarios_id":5,
-    "vehiculos_id":25   
+    "vehiculos_id":25,
+    "notas":"asdkjhasasdasdaSDAsdkas"
+   
 }
 
 ###

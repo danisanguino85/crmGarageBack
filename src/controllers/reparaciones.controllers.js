@@ -1,4 +1,5 @@
 const reparacionesModel = require("../models/reparaciones.models");
+const notasModel = require("../models/notas.models");
 
 const getAllReparaciones = async (req, res, next) => {
     try {
@@ -106,16 +107,18 @@ const getVehiculoByReparacion = async (req, res, next) => {
 };
 
 const createReparacion = async (req, res, next) => {
-    const { presupuesto, usuarios_id, vehiculos_id } = req.body;
-
     try {
         const result = await reparacionesModel.insertRepacion(req.body);
 
         const reparacion = await reparacionesModel.selectByIdReparaciones(
             result.insertId,
         );
+        const nota = await notasModel.insertReparacionNota(
+            req.body.notas,
+            result.insertId,
+        );
 
-        res.json(reparacion);
+        res.json(reparacion, nota);
     } catch (error) {
         next(error);
     }
