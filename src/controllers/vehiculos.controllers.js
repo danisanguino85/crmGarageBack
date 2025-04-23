@@ -58,7 +58,7 @@ const createVehiculo = async (req, res, next) => {
 
         res.json(vehiculo, clienteId);
     } catch (error) {
-        res.status(400).json({ message: error.sqlMessage });
+        next(error)
     }
 };
 

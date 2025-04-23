@@ -96,11 +96,12 @@ const createUsuario = async (req, res, next) => {
 
     try {
         const result = await usuariosModel.insertUsuario(req.body);
+        console.log(result);
         const usuarios = await usuariosModel.selectUsuarioById(result.insertId);
 
         res.json(usuarios);
     } catch (error) {
-        res.status(400).json({ message: error.sqlMessage });
+        res.status(400).json({ message: error });
     }
 };
 

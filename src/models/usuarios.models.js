@@ -81,6 +81,7 @@ const insertUsuario = async ({
     password,
     jornada,
     especialidad,
+    foto_perfil,
 }) => {
     const [result] = await db.query(
         `INSERT INTO usuarios (
@@ -95,8 +96,8 @@ const insertUsuario = async ({
           rol,
           password,
           jornada,
-          especialidad
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          especialidad,
+          foto_perfil) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`,
         [
             nombre,
             apellidos,
@@ -110,6 +111,7 @@ const insertUsuario = async ({
             password,
             jornada,
             especialidad,
+            "",
         ],
     );
     return result;
