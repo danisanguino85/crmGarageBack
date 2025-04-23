@@ -12,7 +12,7 @@ const getAllUsuarios = async (req, res, next) => {
 
         res.json(usuarios);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -22,7 +22,7 @@ const getAllAdmin = async (req, res, next) => {
 
         res.json(admin);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -32,7 +32,7 @@ const getAllMecan = async (req, res, next) => {
 
         res.json(mecanicos);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -44,7 +44,7 @@ const getMecanicoByReparacion = async (req, res, next) => {
 
         res.json(mecanico);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -54,7 +54,7 @@ const getUsuariosById = async (req, res, next) => {
         const usuarios = await usuariosModel.selectUsuarioById(id);
         res.json(usuarios);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -65,7 +65,7 @@ const getUsuariosTelefono = async (req, res, next) => {
         const usuarios = await usuariosModel.selectUsuarioByTelefono(telefono);
         res.json(usuarios);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -76,7 +76,7 @@ const getUsuariosByEmail = async (req, res, next) => {
         const usuarios = await usuariosModel.selectUsuarioByEmail(email);
         res.json(usuarios);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -86,7 +86,7 @@ const getUsuariosByFoto = async (req, res, next) => {
         const usuarios = await usuariosModel.selectUsuarioByFoto(id);
         res.json(usuarios);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -100,7 +100,7 @@ const createUsuario = async (req, res, next) => {
 
         res.json(usuarios);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -115,7 +115,7 @@ const updateUsuario = async (req, res, next) => {
 
         res.json(usuarios);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -137,7 +137,7 @@ const updateimagen = async (req, res, next) => {
         const usuarios = await usuariosModel.selectUsuarioById(id);
         res.json(usuarios);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -172,7 +172,7 @@ const loginUsuario = async (req, res, next) => {
             token: createToken(emailIsValid),
         });
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 

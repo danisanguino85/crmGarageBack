@@ -5,7 +5,7 @@ const getAllNotas = async (req, res, next) => {
         const notas = await notasModel.selectAllNotas();
         res.json(notas);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 const getNotaById = async (req, res, next) => {
@@ -14,7 +14,7 @@ const getNotaById = async (req, res, next) => {
         const nota = await notasModel.selectNotaById(notaId);
         res.json(nota);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 const getNotaByReparacion = async (req, res, next) => {
@@ -22,7 +22,7 @@ const getNotaByReparacion = async (req, res, next) => {
         const notas = await notasModel.selectNotaByReparacion(req.body.id);
         res.json(notas);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -33,7 +33,7 @@ const createNota = async (req, res, next) => {
 
         res.json(nota);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -45,7 +45,7 @@ const getReparacionAllNotas = async (req, res, next) => {
             await notasModel.selectReparacionAllNotas(reparacionId);
         res.json(reparacionNotas);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -61,7 +61,7 @@ const insertReparacionNota = async (req, res, next) => {
         const reparacion = await notasModel.selectNotaById(result.insertId);
         res.json(reparacion);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 

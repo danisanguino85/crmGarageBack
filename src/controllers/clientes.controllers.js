@@ -9,7 +9,7 @@ const getAllClientes = async (req, res, next) => {
         );
         res.json(clientes);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 const getClienteById = async (req, res, next) => {
@@ -18,7 +18,7 @@ const getClienteById = async (req, res, next) => {
         const clientes = await clientesModel.selectClienteById(clienteId);
         res.json(clientes);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -28,7 +28,7 @@ const getClientesByTelefono = async (req, res, next) => {
         const clientes = await clientesModel.selectClientesByTelefono(telefono);
         res.json(clientes);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 const getClientesByEmail = async (req, res, next) => {
@@ -37,7 +37,7 @@ const getClientesByEmail = async (req, res, next) => {
         const clientes = await clientesModel.selectClientesByEmail(email);
         res.json(clientes);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -48,7 +48,7 @@ const createCliente = async (req, res, next) => {
 
         res.json(cliente);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -63,7 +63,7 @@ const updateCliente = async (req, res, next) => {
 
         res.json(cliente);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -74,7 +74,7 @@ const getClienteByReparacion = async (req, res, next) => {
             await clientesModel.selectClienteByReparacion(reparacionId);
         res.json(cliente);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 

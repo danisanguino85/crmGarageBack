@@ -5,7 +5,7 @@ const getAllVehiculos = async (req, res, next) => {
         const vehiculo = await vehiculosModel.selectAllVehiculos();
         res.json(vehiculo);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 const getVehiculoById = async (req, res, next) => {
@@ -14,7 +14,7 @@ const getVehiculoById = async (req, res, next) => {
         const vehiculo = await vehiculosModel.selectVehiculoById(vehiculoId);
         res.json(vehiculo);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -27,7 +27,7 @@ const getVehiculoByMatricula = async (req, res, next) => {
 
         res.json(vehiculo[0]);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -39,7 +39,7 @@ const getVehiculoByCliente = async (req, res, next) => {
 
         res.json(vehiculo);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 const createVehiculo = async (req, res, next) => {
@@ -58,7 +58,7 @@ const createVehiculo = async (req, res, next) => {
 
         res.json(vehiculo, clienteId);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 

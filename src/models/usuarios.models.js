@@ -80,39 +80,40 @@ const insertUsuario = async ({
     rol,
     password,
     jornada,
-    foto_perfil,
     especialidad,
 }) => {
-    try {
-        const [result] = await db.query(
-            `INSERT INTO usuarios (
-                nombre, apellidos, dni, telefono, email, fecha_nacimiento, 
-                direccion, numero_ss, rol,
-                password, jornada, foto_perfil, 
-                especialidad
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-            [
-                nombre,
-                apellidos,
-                dni,
-                telefono,
-                email,
-                fecha_nacimiento,
-                direccion,
-                numero_ss,
-                rol,
-                password,
-                jornada,
-                foto_perfil,
-                especialidad,
-            ],
-        );
-        return result;
-    } catch (error) {
-        console.error("Error al crear el usuario:", error);
-    }
+    const [result] = await db.query(
+        `INSERT INTO usuarios (
+          nombre,
+          apellidos,
+          dni,
+          telefono,
+          email,
+          fecha_nacimiento,
+          direccion,
+          numero_ss,
+          rol,
+          password,
+          jornada,
+          especialidad
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+            nombre,
+            apellidos,
+            dni,
+            telefono,
+            email,
+            fecha_nacimiento,
+            direccion,
+            numero_ss,
+            rol,
+            password,
+            jornada,
+            especialidad,
+        ],
+    );
+    return result;
 };
-
 const updateUsuarioById = async (
     id,
     {
@@ -127,16 +128,19 @@ const updateUsuarioById = async (
         fecha_alta,
         fecha_baja,
         rol,
-        activo,
         password,
         fecha_actualizacion,
         jornada,
-        foto_perfil,
         especialidad,
     },
 ) => {
     const [result] = await db.query(
-        "UPDATE usuarios SET nombre = ?, apellidos = ?, dni = ?, telefono = ?, email = ?, fecha_nacimiento = ?, direccion = ?, numero_ss = ?, fecha_alta = ?, fecha_baja = ?, rol = ?, activo = ?, password = ?, fecha_actualizacion = ?, jornada = ?, foto_perfil = ?, especialidad = ? WHERE id = ?",
+        `UPDATE usuarios SET 
+        nombre = ?, apellidos = ?, dni = ?, telefono = ?, email = ?, 
+        fecha_nacimiento = ?, direccion = ?, numero_ss = ?, 
+        fecha_alta = ?, fecha_baja = ?, rol = ?, password = ?, 
+        fecha_actualizacion = ?, jornada = ?, especialidad = ? 
+        WHERE id = ?`,
         [
             nombre,
             apellidos,
@@ -149,15 +153,14 @@ const updateUsuarioById = async (
             fecha_alta,
             fecha_baja,
             rol,
-            activo,
             password,
             fecha_actualizacion,
             jornada,
-            foto_perfil,
             especialidad,
             id,
         ],
     );
+
     return result;
 };
 

@@ -7,7 +7,7 @@ const getAllReparaciones = async (req, res, next) => {
 
         res.json(reparaciones);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -17,7 +17,7 @@ const getAllProgreso = async (req, res, next) => {
 
         res.json(progreso);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -27,7 +27,7 @@ const getAllPendiente = async (req, res, next) => {
 
         res.json(pendiente);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -37,7 +37,7 @@ const getAllFinalizado = async (req, res, next) => {
 
         res.json(finalizado);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -47,7 +47,7 @@ const getAllPorFechaIngreso = async (req, res, next) => {
 
         res.json(fechaIngreso);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -58,7 +58,7 @@ const getAllFechaAntigua = async (req, res, next) => {
 
         res.json(fechaAntigua);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 const getReparacionesByVehiculo = async (req, res, next) => {
@@ -68,7 +68,7 @@ const getReparacionesByVehiculo = async (req, res, next) => {
             await reparacionesModel.selectReparacionesByVehiculo(vehiculoId);
         res.json(reparaciones);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -79,7 +79,7 @@ const getByIdReparaciones = async (req, res, next) => {
             await reparacionesModel.selectByIdReparaciones(idReparaciones);
         res.json(reparacion);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -91,7 +91,7 @@ const getReparacionesByMecanico = async (req, res, next) => {
             );
         res.json(reparaciones);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -102,7 +102,7 @@ const getVehiculoByReparacion = async (req, res, next) => {
         );
         res.json(vehiculos);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -120,7 +120,7 @@ const createReparacion = async (req, res, next) => {
 
         res.json(reparacion, nota);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -138,7 +138,7 @@ const updateReparacion = async (req, res, next) => {
 
         res.json(reparacion);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -156,7 +156,7 @@ const marcarCompletada = async (req, res, next) => {
 
         res.json(reparacion);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 

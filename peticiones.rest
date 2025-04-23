@@ -188,43 +188,40 @@ POST http://localhost:3000/api/usuarios/register
 Content-Type: application/json
 
 {
-  "nombre": "jean franco",
-  "apellidos": "ravelo",
-  "dni": "09876748z",
-  "telefono": "333445567",
-  "email": "jean@gmail.com",
+  "nombre": "Mamady",
+  "apellidos": "Camara",
+  "dni": "09876748G",
+  "telefono": "333445564",
+  "email": "ma@gmail.com",
   "fecha_nacimiento": "2005-08-18",
   "direccion": "Calle del Automóvil 89, madrid",
-  "numero_ss": "738079892325",
+  "numero_ss": "738079892326",
   "rol": "admin",
   "password": "1234",
   "jornada": "completa",
-  "foto_perfil": "https://example.com/foto-luif.jpg",
   "especialidad": "híbridos_y_eléctricos"
 }
 
 ###
-PUT http://localhost:3000/api/usuarios/update/6
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlhdCI6MTc0NDM3MDYyM30.ZyFJOCRS8KTru0Hw05di0pxmpYleEBq5nIVpL7hLEdE
+PUT http://localhost:3000/api/usuarios/update/14
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsInJvbCI6ImFkbWluIiwiaWF0IjoxNzQ1Mzk5NjU2fQ.-Wq0kFioQsft3h4lL2wnG_kbrOsPRYUa4h1sVIbHeNE
 Content-Type: application/json
 
 {
-  "nombre": "José",
-  "apellidos": "González Pérez",
-  "dni": "87654321Y",
-  "telefono": "623456789",
-  "email": "jose.gonzalez@example.com",
-  "fecha_nacimiento": "1990-05-20",
+  "nombre": "Mamady",
+  "apellidos": "Camara",
+  "dni": "09876748G",
+  "telefono": "333445564",
+  "email": "ma@gmail.com",
+  "fecha_nacimiento": "2005-08-18",
   "direccion": "Avenida de la Libertad 15, Madrid",
-  "numero_ss": "998877665544",
+  "numero_ss": "738079892326",
   "fecha_alta": "2022-02-10",
   "fecha_baja": "2025-02-10",
-  "rol": "mecanico",
-  "activo": 1,
-  "passwword": "JoseMecSecure2025!",
+  "rol": "admin",
+  "password": "1234",
   "fecha_actualizacion": "2025-04-11",
   "jornada": "completa",
-  "foto_perfil": "https://example.com/foto-jose.jpg",
   "especialidad": "híbridos_y_eléctricos"
 }
 
@@ -234,8 +231,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtZWNhbmljbyIsImlh
 Content-Type: application/json
 
 { 
-    "email": "leote@example.com",
-    "password": "123"
+    "email": "ma@gmail.com",
+    "password": "1234"
 }
 
 ###

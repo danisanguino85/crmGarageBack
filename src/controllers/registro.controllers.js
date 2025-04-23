@@ -8,7 +8,7 @@ const createEntrada = async (req, res, next) => {
         );
         res.json(registro);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -20,7 +20,7 @@ const createSalida = async (req, res, next) => {
         );
         res.json(registro);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
@@ -30,7 +30,7 @@ const getLatestSalidas = async (req, res, next) => {
         const result = await registroModels.selectLatestSalidas(usuarioId);
         res.json(result);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 const getLatestEntradas = async (req, res, next) => {
@@ -39,7 +39,7 @@ const getLatestEntradas = async (req, res, next) => {
         const result = await registroModels.selectLatestEntradas(usuarioId);
         res.json(result);
     } catch (error) {
-        next(error);
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
