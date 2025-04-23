@@ -192,7 +192,7 @@ Content-Type: application/json
   "apellidos": "Camara",
   "dni": "09876748S",
   "telefono": "333445561",
-  "email": "maasdad@gmail.com",
+  "email": "ma@gmail.com",
   "fecha_nacimiento": "2005-08-18",
   "direccion": "Calle del Automóvil 89, madrid",
   "numero_ss": "738079892359",

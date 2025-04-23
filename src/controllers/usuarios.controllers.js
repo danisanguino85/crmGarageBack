@@ -101,7 +101,7 @@ const createUsuario = async (req, res, next) => {
 
         res.json(usuarios);
     } catch (error) {
-        res.status(400).json({ message: error });
+        res.status(400).json({ message: error.sqlMessage });
     }
 };
 
