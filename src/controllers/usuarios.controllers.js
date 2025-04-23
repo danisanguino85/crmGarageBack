@@ -138,7 +138,7 @@ const updateimagen = async (req, res, next) => {
         const usuarios = await usuariosModel.selectUsuarioById(id);
         res.json(usuarios);
     } catch (error) {
-        res.status(400).json({ message: error.sqlMessage });
+        res.status(400).json({ message: error });
     }
 };
 

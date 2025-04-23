@@ -58,7 +58,7 @@ const createVehiculo = async (req, res, next) => {
 
         res.json(vehiculo, clienteId);
     } catch (error) {
-        next(error)
+        next(error);
     }
 };
 
